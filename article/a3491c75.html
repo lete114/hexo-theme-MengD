@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Java中的==和equals的区别</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-05-25 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">557 | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>2分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <br>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在学习Java时经常遇到这个问题，虽然很简单，自己也会用，并且哪里该用<code>==</code>哪里该用<code>equals()</code>也是能辨别出来，但是不知道<code>==</code>和<code>equals()</code>它俩有啥区别。</p>
+<p>特此记录下此片文章，方便以后自己查询时不用再去Baidu、Google、Bing了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/10.jpg"></p>
+<a id="more"></a>
+
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><blockquote>
+<p>1.<code>==</code> 直接判断两个变量名的值是否指向同一个内存空间地址 (如果都指向同一个内存空间地址的话就返回true)<br>2.<code>equals()</code> 直接判断两个变量名的值是否相同 (如果相同则返回true)</p>
+</blockquote>
+<br>
+
+<p>以上简单的说明了<code>==</code>和<code>equals()</code>它们的区别，如果想看更详细的内容请继续往下看。</p>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符 =="></a>关系运算符 ==</h3><p>关系运算符返回的是一个boolean类型结果，它计算的是值之间的关系</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(a==b);</span><br><span class="line"></span><br><span class="line">String str1 = <span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">String str3 = <span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line">System.out.println(str2==str3);</span><br><span class="line"></span><br><span class="line">str2 = str1;</span><br><span class="line">str3 = str1;</span><br><span class="line">System.out.println(str1==str2);</span><br></pre></td></tr></table></figure></div>
+<br>
+
+<p>运行结果是<code>true，false，true</code></p>
+<p>解析：<code>System.out.println(str2==str3);</code> 为什么会返回<code>false</code></p>
+<p>因为<code>String str2 = new String(&quot;hello&quot;);</code>已经new了一个内存空间来存储hello</p>
+<p><code>String str3 = new String(&quot;hello&quot;);</code>又new了一个内存空间来存储hello</p>
+<p>这里判断用的是<code>==</code>关系运算符，上面已经明确说明了<code>==</code> 判断两个变量名的值是否指向同一个内存空间地址(如果都指向同一个内存空间地址的话就返回true) 因此运行结果为false</p>
+<p>如果使用的是<code>equals()</code>的话，返回结果则是true</p>
+<p>那么会有人问，为什么b不会创建一个新的内存空间呢？</p>
+<p>因为a已经创建了一个内存空间了，b就直接指向3了</p>
+<p>说人话就是：</p>
+<blockquote>
+<p>1.<code>int b=3;</code>就是使用别人创建好的，举个例子：A花钱建了个公共厕所，B就可以直接花钱使用<br><br>2.<code>String str3 = new String(&quot;hello&quot;);</code>就是别人建别人的，我建我自己的，举个例子：A花钱建了个公共厕所，B也要建一个公共厕所</p>
+</blockquote>
+<h3 id="【Lete乐特个人博客】：https-lete114-now-sh"><a href="#【Lete乐特个人博客】：https-lete114-now-sh" class="headerlink" title="【Lete乐特个人博客】：https://lete114.now.sh"></a>【Lete乐特个人博客】：<a target="_blank" rel="noopener" href="https://lete114.now.sh/">https://lete114.now.sh</a></h3>
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/a3491c75.html" one-link-mark="yes">http://mengd.lete114.top/article/a3491c75.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/记录/"><span>记录</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Java/"><span>Java</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/c97bb6c7.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Java重载和重写的区别
+            </a>
+            
+            
+            
+            <a href="/article/addcec7.html" class="page-next">
+                Github和Gitee同步提交的方法
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

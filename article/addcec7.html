@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Github和Gitee同步提交的方法</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-05-24 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">273 | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>1分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <br>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有时候我们需要把项目提交到远程仓库，如GitHub、Gitee(码云)、coding等等，但一个个的提交方式实在是太慢了，而且这繁琐的操作在未来，依旧需要自己手动一个个的进行提交。</p>
+<p>那有什么办法可以同时(同步)提交多个仓库呢？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/09.jpg"></p>
+<a id="more"></a>
+
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>1.在项目目录找到<code>.git</code>隐藏文件夹，如果在项目目录找不到<code>.git</code>隐藏文件夹，文件夹右上角打开<code>查看</code>然后找到<code>隐藏的项目</code>并勾选即可</p>
+<p>2.用记事本打开<code>config</code>文件，把Gitee(码云)的仓库地址填进去即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = <span class="literal">false</span></span><br><span class="line">	bare = <span class="literal">false</span></span><br><span class="line">	logallrefupdates = <span class="literal">true</span></span><br><span class="line">	symlinks = <span class="literal">false</span></span><br><span class="line">	ignorecase = <span class="literal">true</span></span><br><span class="line">[remote <span class="string">&quot;origin&quot;</span>]</span><br><span class="line">	url = https://gitee.com/lete114/lete114.git</span><br><span class="line">	url = https://github.com/lete114/lete114.github.io.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch <span class="string">&quot;master&quot;</span>]</span><br><span class="line">	remote = origin</span><br><span class="line">	merge = refs/heads/master</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<br>
+
+<p>最后重新<code>push</code>即可，如果Gitee(码云)仓库有过提交，使用此方法第一次提交请使用<code>强行提交</code>，避免抱错</p>
+<br>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure></div>
+<h3 id="【Lete乐特个人博客】：https-lete114-now-sh"><a href="#【Lete乐特个人博客】：https-lete114-now-sh" class="headerlink" title="【Lete乐特个人博客】：https://lete114.now.sh"></a>【Lete乐特个人博客】：<a target="_blank" rel="noopener" href="https://lete114.now.sh/">https://lete114.now.sh</a></h3>
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/addcec7.html" one-link-mark="yes">http://mengd.lete114.top/article/addcec7.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Github/"><span>Github</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Gitee/"><span>Gitee</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/a3491c75.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Java中的==和equals的区别
+            </a>
+            
+            
+            
+            <a href="/article/addee0b6.html" class="page-next">
+                Hexo+yilia安装Valine评论系统、LeanCloud、创建应用、部署云引擎
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

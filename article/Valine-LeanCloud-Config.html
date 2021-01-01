@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">LeanCloud-Valine保姆级配置教程</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-07-09 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">2.5k | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>12分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前写了一篇<code>LeanCloud</code>+<code>Yilia</code>的文章👉 <a target="_blank" rel="noopener" href="https://blog.lete114.top/article/addee0b6.html">https://blog.lete114.top/article/addee0b6.html</a></p>
+<p>我觉得还不够详细，而且之前写的没有<code>Qmsg酱</code>(QQ评论提醒)、<code>Server酱</code>(微信评论提醒)</p>
+<p>特此写了这篇更详细的，堪称<code>保姆级</code>别的教程了</p>
+<p>废话不多说教程开始</p>
+<h2 id="创建LeanCloud应用"><a href="#创建LeanCloud应用" class="headerlink" title="创建LeanCloud应用"></a>创建LeanCloud应用</h2><p>注册我就不多说了，有手有脑都会</p>
+<div class="note danger">
+  <p><code>注意：</code>一定要选择国际版，如果你选择的是<code>华北</code>或者<code>华东</code>的话，Valine 后台评论管理是需要备案才能绑定的</p>
+</div>
+
+<h3 id="打开LeanCloud"><a href="#打开LeanCloud" class="headerlink" title="打开LeanCloud"></a>打开LeanCloud</h3><p>官网：<a target="_blank" rel="noopener" href="https://console.leancloud.app/#/app">https://console.leancloud.app/#/app</a><br>注册登陆后长这样<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/13.png" alt="image.png"><br>点击下边的<code>创建应用</code>填写应用昵称点击<code>创建</code>即可<br><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/11.png" alt="image.png"></p>
+<h3 id="打开创建的应用"><a href="#打开创建的应用" class="headerlink" title="打开创建的应用"></a>打开创建的应用</h3><p>选择<code>云引擎</code>–&gt;<code>设置</code>–&gt;<code>云引擎域名</code>(<code>强调这个就是LeancLoud的后台地址</code>输入自己喜欢的一个的前缀)<br>后台地址后面加上<code>/sign-up</code>就可以注册<br>例如：<a target="_blank" rel="noopener" href="https://letetest.avosapps.us/sign-up">https://letetest.avosapps.us/sign-up</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/07.png" alt="image.png"><br>当然如果你有自己的域名也可以选择绑定自己的域名，选择<code>设置</code>–&gt;<code>域名绑定</code>–&gt;<code>云引擎域名</code><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/04.png" alt="image.png"></p>
+<h3 id="自定义环境变量"><a href="#自定义环境变量" class="headerlink" title="自定义环境变量"></a>自定义环境变量</h3><p>选择<code>云引擎</code>–&gt;<code>设置</code>–&gt;<code>添加自定义环境变量</code></p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SITE_NAME</td>
+<td>Lete乐特个人博客</td>
+<td><code>[必填]</code>网站名称</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td><a target="_blank" rel="noopener" href="https://blog.lete114.top/">https://blog.lete114.top</a></td>
+<td><code>[必填]</code>网站地址</td>
+</tr>
+<tr>
+<td>SMTP_USER</td>
+<td><a href="mailto:&#x61;&#x64;&#109;&#105;&#x6e;&#64;&#x6c;&#101;&#x74;&#101;&#x31;&#x31;&#x34;&#x2e;&#116;&#x6f;&#x70;">&#x61;&#x64;&#109;&#105;&#x6e;&#64;&#x6c;&#101;&#x74;&#101;&#x31;&#x31;&#x34;&#x2e;&#116;&#x6f;&#x70;</a></td>
+<td><code>[必填]</code>邮箱地址</td>
+</tr>
+<tr>
+<td>SMTP_PASS</td>
+<td>123456789</td>
+<td><code>[必填]</code>邮箱授权码<br>(部分邮箱服务商默认开启SMTP) <br> (如果没有授权码可直接填写邮箱密码)</td>
+</tr>
+<tr>
+<td>SMTP_SERVICE</td>
+<td>QQ</td>
+<td><code>[必填]</code>邮箱服务商<a target="_blank" rel="noopener" href="https://nodemailer.com/smtp/well-known/#supported-services">查询相关详细</a></td>
+</tr>
+<tr>
+<td>SENDER_NAME</td>
+<td>Lete乐特</td>
+<td><code>[必填]</code>寄件人名称</td>
+</tr>
+<tr>
+<td>TEMPLATE_NAME</td>
+<td>rainbow</td>
+<td><code>[必填]</code> 设置提醒邮件的主题<br>看下方有主题模板</td>
+</tr>
+<tr>
+<td>ADMIN_URL</td>
+<td><a target="_blank" rel="noopener" href="https://letetest.leanapp.cn/">https://letetest.leanapp.cn</a></td>
+<td><code>[可选]</code> 后台管理地址</td>
+</tr>
+<tr>
+<td>SCKEY</td>
+<td>SCU100890xxxxxx293e1xxx9dbfe82axxxx2dc</td>
+<td><code>[可选]</code> server 酱的 SCKEY(微信提醒)</td>
+</tr>
+<tr>
+<td>QMSG_KEY</td>
+<td>fdexxxx42a1xxx28f16d5xxxxa00</td>
+<td><code>[可选]</code> Qmsg 酱的密钥</td>
+</tr>
+<tr>
+<td>QQ</td>
+<td>123456789</td>
+<td><code>[可选]</code>Qmsg 酱发送的 qq，不填为全部<br>支持多个，用英文逗号分隔即可</td>
+</tr>
+<tr>
+<td>QQ_SHAKE</td>
+<td>true</td>
+<td><code>[可选]</code>填写代表发送 QQ 戳一戳</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td><code>&lt;p style=&#39;color:red&#39;&gt;test&lt;p&gt;</code></td>
+<td><code>[可选]</code> 自定义信息输出，支持 HTML 代码<br>LeanCloud控制台日志信息输出</td>
+</tr>
+<tr>
+<td>FAVICON</td>
+<td><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/favicon.ico">https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/favicon.ico</a></td>
+<td>[可选] 网页 favicon 图标</td>
+</tr>
+<tr>
+<td>TO_EMAIL</td>
+<td><a href="mailto:&#x61;&#100;&#x6d;&#x69;&#110;&#x40;&#x6c;&#x65;&#x74;&#101;&#x31;&#49;&#x34;&#x2e;&#116;&#x6f;&#112;">&#x61;&#100;&#x6d;&#x69;&#110;&#x40;&#x6c;&#x65;&#x74;&#101;&#x31;&#49;&#x34;&#x2e;&#116;&#x6f;&#112;</a></td>
+<td><code>[可选]</code>博主通知收件地址，默认使用<code>SMTP_USER</code></td>
+</tr>
+<tr>
+<td>SPAM_WORDS</td>
+<td>检测的内容，如：单号，物流</td>
+<td><code>[可选]</code> 需要对屏蔽的关键词，关键词用半角逗号分隔</td>
+</tr>
+<tr>
+<td>MAIN_COLOR</td>
+<td>#ff9191</td>
+<td><code>[可选]</code> 仅针对 custom2 模板主题的主要颜色</td>
+</tr>
+<tr>
+<td>MAIN_IMG</td>
+<td><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lete114/CDN/BoBoPic/22.jpg">https://cdn.jsdelivr.net/gh/lete114/CDN/BoBoPic/22.jpg</a></td>
+<td><code>[可选]</code> 仅针对 custom2 模板主题的头图</td>
+</tr>
+</tbody></table>
+<p>邮箱主题模板</p>
+<table>
+<thead>
+<tr>
+<th>主题</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default</td>
+<td>默认主题</td>
+</tr>
+<tr>
+<td>rainbow</td>
+<td>原版的 rainbow</td>
+</tr>
+<tr>
+<td>custom1</td>
+<td>基于🎉<a target="_blank" rel="noopener" href="https://pbas.club/">梨花町の肾兄さん</a>🎉的模板</td>
+</tr>
+<tr>
+<td>custom2</td>
+<td>对 custom1 的改进版</td>
+</tr>
+</tbody></table>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.hclonely.com/posts/409d3090/">https://blog.hclonely.com/posts/409d3090/</a><br>参考：<a target="_blank" rel="noopener" href="https://www.antmoe.com/posts/2380732b/">https://www.antmoe.com/posts/2380732b/</a></p>
+<h3 id="参考我博客的自定义环境变量"><a href="#参考我博客的自定义环境变量" class="headerlink" title="参考我博客的自定义环境变量"></a>参考我博客的自定义环境变量</h3><p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/09.png"></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>选择<code>云引擎</code>–&gt;<code>部署</code>–&gt;<code>部署项目</code>–&gt;<code>Git部署</code>–&gt;<code>配置Git</code>–&gt;<code>填写下方任意一个地址</code>–&gt;<code>保存</code>–&gt;<code>生产环境</code>–&gt;<code>部署</code><br>个人定制：<a target="_blank" rel="noopener" href="https://github.com/lete114/Valine-Admin-Server.git">https://github.com/lete114/Valine-Admin-Server.git</a><br>小康：<a target="_blank" rel="noopener" href="https://github.com/sviptzk/Valine-Admin-Server.git">https://github.com/sviptzk/Valine-Admin-Server.git</a></p>
+<h3 id="创建定时任务"><a href="#创建定时任务" class="headerlink" title="创建定时任务"></a>创建定时任务</h3><ol>
+<li><p>定时检查24小时内漏发的邮件通知<br>生产环境选择<code>resend_mails</code><br>选择<code>Cron表达式</code>时间自己调整<code>0 0 1 * * *</code></p>
+</li>
+<li><p>自动唤醒<br>生产环境选择<code>self_wake</code><br>选择<code>Cron表达式</code>时间自己调整<code>0 0/60 0 * * ?</code></p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/05.png" alt="image.png"></p>
+<h3 id="设置安全域名"><a href="#设置安全域名" class="headerlink" title="设置安全域名"></a>设置安全域名</h3><p>这里设置的是你博客的地址，你博客有多少个地址就填多少个地址，不然评论显示403<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/01.png" alt="image.png"></p>
+<h2 id="申请Qmsg酱"><a href="#申请Qmsg酱" class="headerlink" title="申请Qmsg酱"></a>申请Qmsg酱</h2><ol>
+<li><p>打开官网<br>官网：<a target="_blank" rel="noopener" href="https://qmsg.zendee.cn/">https://qmsg.zendee.cn/</a><br>点击登陆(我选择的是QQ登陆)<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/02.png" alt="image.png"></p>
+</li>
+<li><p>添加QQ<br>可填写多个<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/03.png" alt="image.png"></p>
+</li>
+<li><p>点击右上角文档<br>把<code>send</code>后面的<code>key</code>复制到<code>LeanCloud</code>的<code>QMSG_KEY</code>环境变量后保存即可<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/08.png" alt="image.png"></p>
+</li>
+</ol>
+<h2 id="申请Server酱"><a href="#申请Server酱" class="headerlink" title="申请Server酱"></a>申请Server酱</h2><p>和Qmsg类似，<code>注册</code>—&gt;<code>登陆</code>—&gt;<code>发送消息</code>—&gt;就可以得到<code>SCKEY</code>代码了<br>官网：<a target="_blank" rel="noopener" href="http://sc.ftqq.com/3.version">http://sc.ftqq.com/3.version</a><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/12.png" alt="Server酱.png"></p>
+<h2 id="Valine-配置"><a href="#Valine-配置" class="headerlink" title="Valine 配置"></a>Valine 配置</h2><ol>
+<li>打开<code>C:\Hexo-Blog\themes\Butterfly\_config.yml</code><br><code>注意：</code>下方步骤由<code>Butterfly</code>主题独有，如果你是其他主题请自行查看主题源码<br>找到<code># comments</code>修改<code>valine</code>的js地址以下选其一<br>个人定制：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/js/Valine-Lete3.2.js">https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/js/Valine-Lete3.2.js</a><br>HCLonely魔改版：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js">https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js</a><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># comments</span></span><br><span class="line"><span class="attr">blueimp_md5:</span> <span class="string">https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js</span></span><br><span class="line"><span class="attr">gitalk:</span> <span class="string">https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js</span></span><br><span class="line"><span class="attr">gitalk_css:</span> <span class="string">https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css</span></span><br><span class="line"><span class="attr">valine:</span> <span class="string">https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/js/Valine-Lete3.2.js</span></span><br><span class="line"><span class="attr">disqusjs:</span> <span class="string">https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js</span></span><br><span class="line"><span class="attr">disqusjs_css:</span> <span class="string">https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css</span></span><br><span class="line"><span class="attr">utterances:</span> <span class="string">https://utteranc.es/client.js</span></span><br></pre></td></tr></table></figure></div></li>
+<li>再次找到<code>valine</code>添加<code>master</code>和<code>friends</code><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># valine</span></span><br><span class="line"><span class="comment"># https://valine.js.org</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># if you want use valine,please set this value is true</span></span><br><span class="line">  <span class="attr">master:</span> <span class="string">2a77xxx15437xxxd7f4442e2</span> <span class="comment"># 你邮箱的md5加密(百度md5在线加密)</span></span><br><span class="line">  <span class="attr">friends:</span> <span class="string">ed5xxxcfe547babab7xxx6893b</span> <span class="comment"># 你朋友的邮箱md5加密</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="string">qvkfTxxxxxACiF4lscUxxxYXbMMI</span> <span class="comment"># leancloud application app id</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">WOUxxx5Pmtwxxxrog</span> <span class="comment"># leancloud application app key</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">true</span> <span class="comment"># valine mail notify (true/false) Deprecated in v1.4.0+</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false) Deprecated in v1.4.0+</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">monsterid</span> <span class="comment"># gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-CN</span> <span class="comment"># i18n: zh-CN/zh-TW/en/ja</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">建议使用QQ邮箱，评论头像采用QQ头像</span> <span class="comment">#评论框占位符</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">false</span> <span class="comment"># Record reviewer IP</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="comment"># This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)</span></span><br><span class="line">  <span class="attr">emojiCDN:</span>  <span class="comment"># emoji CDN</span></span><br><span class="line">  <span class="attr">enableQQ:</span> <span class="literal">true</span> <span class="comment"># enable the Nickname box to automatically get QQ Nickname and QQ Avatar</span></span><br><span class="line">  <span class="attr">requiredFields:</span> <span class="string">nick,mail</span> <span class="comment"># required fields nick/mail/link</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="comment"># valine background</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span> <span class="comment"># dispaly comment count in top_img</span></span><br></pre></td></tr></table></figure></div></li>
+<li>随后到<code>C:\Hexo-Blog\themes\Butterfly\layout\includes\comments\valine.pug</code>添加<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">window.valine &#x3D; new Valine(&#123;</span><br><span class="line">  el:&#39;#vcomment&#39;,</span><br><span class="line">  master:&#39;#&#123;theme.valine.master&#125;&#39;,</span><br><span class="line">  friends:&#39;#&#123;theme.valine.friends&#125;&#39;,</span><br><span class="line">  appId: &#39;#&#123;theme.valine.appId&#125;&#39;,</span><br><span class="line">  appKey: &#39;#&#123;theme.valine.appKey&#125;&#39;,</span><br><span class="line">  #省略....</span><br></pre></td></tr></table></figure></div></li>
+<li>添加自定义表情包<code>[可选]</code><br>打开<code>C:\Hexo-Blog\themes\Butterfly\layout\includes\comments\valine.pug</code><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">window.valine &#x3D; new Valine(&#123;</span><br><span class="line">  el:&#39;#vcomment&#39;,</span><br><span class="line">  master:&#39;#&#123;theme.valine.master&#125;&#39;,</span><br><span class="line">  friends:&#39;#&#123;theme.valine.friends&#125;&#39;,</span><br><span class="line">  #省略....</span><br><span class="line">  enableQQ: #&#123;theme.valine.enableQQ&#125;,</span><br><span class="line">  requiredFields: requiredFields,</span><br><span class="line">  emojiMaps: &#123;</span><br><span class="line">            &quot;1&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;1.gif&quot;,</span><br><span class="line">            &quot;001&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;001.png&quot;,</span><br><span class="line">            &quot;002&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;002.png&quot;,</span><br><span class="line">            &quot;003&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;003.png&quot;,</span><br><span class="line">            #省略....</span><br><span class="line">            &quot;0104&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;104.jpg&quot;,</span><br><span class="line">            &quot;0105&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;105.jpg&quot;,</span><br><span class="line">            &quot;0106&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;106.gif&quot;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div></li>
+<li>valine.pug文件夹的全部内容展示<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">- let emojiMaps &#x3D; &#39;&quot;&quot;&#39;</span><br><span class="line">if site.data.valine</span><br><span class="line">  - emojiMaps &#x3D; JSON.stringify(site.data.valine)</span><br><span class="line"></span><br><span class="line">#vcomment.vcomment</span><br><span class="line">script(src&#x3D;url_for(theme.CDN.valine))</span><br><span class="line">script.</span><br><span class="line">  var requestSetting &#x3D; function (from,set) &#123;</span><br><span class="line">    var from &#x3D; from</span><br><span class="line">    var setting &#x3D; set.split(&#39;,&#39;).filter(function(item)&#123;</span><br><span class="line">    return from.indexOf(item) &gt; -1</span><br><span class="line">    &#125;);</span><br><span class="line">    setting &#x3D; setting.length &#x3D;&#x3D; 0 ? from :setting;</span><br><span class="line">    return setting</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  var guestInfo &#x3D; requestSetting([&#39;nick&#39;,&#39;mail&#39;,&#39;link&#39;],&#39;#&#123; theme.valine.guest_info &#125;&#39;)</span><br><span class="line">  var requiredFields &#x3D; requestSetting([&#39;nick&#39;,&#39;mail&#39;],&#39;#&#123; theme.valine.requiredFields &#125;&#39;)</span><br><span class="line"></span><br><span class="line">  window.valine &#x3D; new Valine(&#123;</span><br><span class="line">    el:&#39;#vcomment&#39;,</span><br><span class="line">    master:&#39;#&#123;theme.valine.master&#125;&#39;,</span><br><span class="line">    friends:&#39;#&#123;theme.valine.friends&#125;&#39;,</span><br><span class="line">    appId: &#39;#&#123;theme.valine.appId&#125;&#39;,</span><br><span class="line">    appKey: &#39;#&#123;theme.valine.appKey&#125;&#39;,</span><br><span class="line">    placeholder: &#39;#&#123;theme.valine.placeholder&#125;&#39;,</span><br><span class="line">    avatar: &#39;#&#123;theme.valine.avatar&#125;&#39;,</span><br><span class="line">    meta: guestInfo,</span><br><span class="line">    pageSize: &#39;#&#123;theme.valine.pageSize&#125;&#39;,</span><br><span class="line">    lang: &#39;#&#123;theme.valine.lang&#125;&#39;,</span><br><span class="line">    recordIP: #&#123;theme.valine.recordIP&#125;,</span><br><span class="line">    serverURLs: &#39;#&#123;theme.valine.serverURLs&#125;&#39;,</span><br><span class="line">    emojiCDN: &#39;#&#123;theme.valine.emojiCDN&#125;&#39;,</span><br><span class="line">    emojiMaps: !&#123;emojiMaps&#125;,</span><br><span class="line">    enableQQ: #&#123;theme.valine.enableQQ&#125;,</span><br><span class="line">    requiredFields: requiredFields,</span><br><span class="line">    emojiMaps: &#123;</span><br><span class="line">              &quot;1&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;1.gif&quot;,</span><br><span class="line">              &quot;001&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;001.png&quot;,</span><br><span class="line">              &quot;002&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;002.png&quot;,</span><br><span class="line">              &quot;003&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;003.png&quot;,</span><br><span class="line">              &quot;004&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;004.png&quot;,</span><br><span class="line">              &quot;005&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;005.png&quot;,</span><br><span class="line">              &quot;006&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;006.png&quot;,</span><br><span class="line">              &#x2F;&#x2F;- 图片过多，我这里就省略了</span><br><span class="line">              &quot;0103&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;103.jpg&quot;,</span><br><span class="line">              &quot;0104&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;104.jpg&quot;,</span><br><span class="line">              &quot;0105&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;105.jpg&quot;,</span><br><span class="line">              &quot;0106&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;lete114&#x2F;CDN&#x2F;emoji&#x2F;106.gif&quot;</span><br><span class="line">          &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<br><span style='font-size:18px'>表情包效果图</span><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/10.png" alt="image.png"></li>
+</ol>
+<h3 id="修改Valine评论区样式"><a href="#修改Valine评论区样式" class="headerlink" title="修改Valine评论区样式"></a>修改Valine评论区样式</h3><ol>
+<li><p>打开<code>C:\Hexo-Blog\themes\Butterfly\_config.yml</code><br>找到<code>theme_color:</code>修改<code>main:</code>颜色即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme_color:</span></span><br><span class="line">   <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">main:</span> <span class="string">&quot;#e58a8a&quot;</span> <span class="comment"># 文章颜色</span></span><br><span class="line">   <span class="attr">paginator:</span> <span class="string">&quot;#00c4b6&quot;</span> <span class="comment"># 分页器的颜色</span></span><br><span class="line">   <span class="attr">button_hover:</span> <span class="string">&quot;#e58a8a&quot;</span> <span class="comment"># 鼠标移动到按钮上的显示的颜色</span></span><br><span class="line">   <span class="attr">text_selection:</span> <span class="string">&quot;#00c4b6&quot;</span> <span class="comment"># 选择文字的背景颜色</span></span><br><span class="line">   <span class="attr">link_color:</span> <span class="string">&quot;#99a9bf&quot;</span> <span class="comment"># 链接颜色</span></span><br><span class="line">   <span class="attr">meta_color:</span> <span class="string">&quot;#858585&quot;</span></span><br><span class="line">   <span class="attr">hr_color:</span> <span class="string">&quot;#e58a8a&quot;</span> <span class="comment"># 小剪刀颜色、小摩托颜色</span></span><br><span class="line">   <span class="attr">code_foreground:</span> <span class="string">&quot;#F47466&quot;</span> <span class="comment"># 代码`code`的颜色</span></span><br><span class="line">   <span class="attr">code_background:</span> <span class="string">&quot;rgba(27, 31, 35, .05)&quot;</span> <span class="comment"># 代码`code`的背景颜色</span></span><br><span class="line">   <span class="attr">toc_color:</span> <span class="string">&quot;#00c4b6&quot;</span></span><br><span class="line">   <span class="attr">blockquote_padding_color:</span> <span class="string">&quot;#e58a8a&quot;</span> <span class="comment"># &gt;  &gt;&gt; &gt;&gt;&gt; 描述颜色</span></span><br><span class="line">   <span class="attr">blockquote_background_color:</span> <span class="string">&quot;#49b1f5&quot;</span></span><br></pre></td></tr></table></figure></div>
+<p><br><span style='font-size:18px'>Valine评论区效果图</span><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Valine-LeanCloud-Config/06.png" alt="image.png"></p>
+</li>
+<li><p>如果你的主题不是butterfly主题的话<br>可以写一个css样式覆盖掉默认样式</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*回复按钮颜色*/</span></span><br><span class="line"><span class="selector-id">#vcomment</span> <span class="selector-class">.vat</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.7125rem</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0px</span> <span class="number">0.8rem</span>;</span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">border-style</span>: solid;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="built_in">rgb</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="attribute">border-image</span>: initial;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*提交评论按钮颜色*/</span></span><br><span class="line"><span class="selector-id">#vcomment</span> <span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>);</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.7rem</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0.3rem</span> <span class="number">0.8rem</span>;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="built_in">rgb</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>);</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*如果你还想修改鼠标移动到【回复】按钮或者【提交】按钮显示的颜色就修改*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">#vcomment .vat:hover &#123;</span></span><br><span class="line"><span class="comment">    color: rgb(0, 0, 0);</span></span><br><span class="line"><span class="comment">    font-size: 0.7125rem;</span></span><br><span class="line"><span class="comment">    padding: 0px 0.8rem;</span></span><br><span class="line"><span class="comment">    border-width: 1px;</span></span><br><span class="line"><span class="comment">    border-style: solid;</span></span><br><span class="line"><span class="comment">    border-color: rgb(0, 0, 0);</span></span><br><span class="line"><span class="comment">    border-image: initial;</span></span><br><span class="line"><span class="comment">    border-radius: 5px;</span></span><br><span class="line"><span class="comment">    transition: all 0.3s ease 0s;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></div>
+<p>最后在<code>&lt;/body&gt;</code>前引用css就可以了</p>
+</li>
+</ol>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/Valine-LeanCloud-Config.html" one-link-mark="yes">http://mengd.lete114.top/article/Valine-LeanCloud-Config.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Hexo/"><span>Hexo</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Valine/"><span>Valine</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/LeanCloud/"><span>LeanCloud</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/DouYin.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                手把手教你，抖音去水印(有手就能学会)
+            </a>
+            
+            
+            
+            <a href="/article/javachat.html" class="page-next">
+                Java实现在线聊天功能
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

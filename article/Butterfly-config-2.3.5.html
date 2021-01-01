@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">(废弃)Butterfly(蝴蝶)主题美化、优化2.3.5</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-06-04 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">3k | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>15分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <h2 id="Butterfly-2-3-5-优化"><a href="#Butterfly-2-3-5-优化" class="headerlink" title="Butterfly 2.3.5 优化"></a>Butterfly 2.3.5 优化</h2><div class="note info">
+  <p>本片文章是根据 Buteeryfly 主题 <code>2.3.5</code> 版本修改。Butterfly 主题于 <code>2020-6-16</code> 更新至 <code>3.0.0-RC-1</code> 版本 (此版本为小更新)</p>
+</div>
+
+<div class="note info">
+     <p><code>2.3.5</code> 版本涉及到修改源码，如果你要升级主题的话，你请看上方其他版本的优化教程。</p>
+</div>
+
+<p>本文所做的优化是我自己<code>hexo init</code>后，去Github上克隆Butterfly主题的稳定版，一步步在原主题基础上修改的<br>保证了小白根据本片文章一步步操作，能够和我博客一样的效果</p>
+<h3 id="修改头部导航栏"><a href="#修改头部导航栏" class="headerlink" title="修改头部导航栏"></a>修改头部导航栏</h3><p>修改前</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Main menu navigation</span></span><br><span class="line"><span class="comment"># ---------------</span></span><br><span class="line"><span class="comment"># format: xxx: 連結 || icon</span></span><br><span class="line"><span class="comment"># sub-menu</span></span><br><span class="line"><span class="comment"># xxx || icon:</span></span><br><span class="line"><span class="comment">#   xxx || 連結 || icon</span></span><br><span class="line">menu:</span><br><span class="line">  Home: / || fa fa-home</span><br><span class="line">  Archives: /archives/ || fa fa-archive</span><br><span class="line">  Tags: /tags/ || fa fa-tags</span><br><span class="line">  Categories: /categories/ || fa fa-folder-open</span><br><span class="line">  Link: /link/ || fa fa-link</span><br><span class="line">  About: /about/ || fa fa-heart</span><br><span class="line">  List||fa fa-list:</span><br><span class="line">    - Music || /music/ || fa fa-music</span><br><span class="line">    - Movie || /movies/ || fa fa-film</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/0b878ac701622.png" alt="image.png"></p>
+<p>修改后</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Main menu navigation</span></span><br><span class="line"><span class="comment"># ---------------</span></span><br><span class="line"><span class="comment"># format: xxx: 連結 || icon</span></span><br><span class="line"><span class="comment"># sub-menu</span></span><br><span class="line"><span class="comment"># xxx || icon:</span></span><br><span class="line"><span class="comment">#   xxx || 連結 || icon</span></span><br><span class="line">menu:</span><br><span class="line">  首页: / || fa fa-home</span><br><span class="line">  归档: /archives/ || fa fa-archive</span><br><span class="line">  标签: /tags/ || fa fa-tags</span><br><span class="line">  分类: /categories/ || fa fa-folder-open</span><br><span class="line">  友情链接: /link/ || fa fa-link</span><br><span class="line">  关于: /about/ || fa fa-heart</span><br><span class="line">  菜单||fa fa-list:</span><br><span class="line">    - 音乐 || /music/ || fa fa-music</span><br><span class="line">    - 电影 || /movies/ || fa fa-film</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/b8c8867341536.png" alt="image.png"></p>
+<h3 id="添加搜索"><a href="#添加搜索" class="headerlink" title="添加搜索"></a>添加搜索</h3><p>在Butterfyl主题配置文件<code>_config.yml</code>文件中找到如下内容修改<code>enable:</code>为<code>true</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">input_placeholder:</span> <span class="string">Search</span> <span class="string">for</span> <span class="string">Posts</span></span><br><span class="line">    <span class="attr">hits_empty:</span> <span class="string">&quot;We didn&#x27;t find any results for the search: $&#123;query&#125;&quot;</span> <span class="comment"># if there are no result</span></span><br></pre></td></tr></table></figure></div>
+<p>作者Github：<a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search">https://github.com/wzpan/hexo-generator-search</a><br>安装插件<code>npm install hexo-generator-search --save</code></p>
+<p>将搜索配置，添加到配置文件中，如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Please see doc for more details: https://docs.jerryc.me/config.html#本地搜索</span></span><br><span class="line"><span class="comment"># ---------------</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">input_placeholder:</span> <span class="string">Search</span> <span class="string">for</span> <span class="string">Posts</span></span><br><span class="line">    <span class="attr">hits_empty:</span> <span class="string">&quot;We didn&#x27;t find any results for the search: $&#123;query&#125;&quot;</span> <span class="comment"># if there are no result</span></span><br></pre></td></tr></table></figure></div>
+<p>效果图：</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/b3616f9a51e95.png" alt="image.png"></p>
+<h3 id="博客昵称颜色修改"><a href="#博客昵称颜色修改" class="headerlink" title="博客昵称颜色修改"></a>博客昵称颜色修改</h3><p><code>C:\Hexo-Blog\themes\Butterfly\source\css\var.styl</code>找到<code>$light-grey = #EEEEEE</code></p>
+<p><code>#EEEEEE</code>修改为你喜欢的颜色</p>
+<p>Lete乐特的颜色:#80bdab</p>
+<p>效果图</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/a22884dfee893.png" alt="image.png"></p>
+<p>如果你不想修改顶部导航栏颜色，就在<code>C:\Hexo-Blog\themes\Butterfly\source\css\_layout\head.styl</code>底部添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//头部颜色</span><br><span class="line"><span class="selector-id">#page-header</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#e3fdfd</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>效果图</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/1722cb301206e.png" alt="image.png"></p>
+<h3 id="移动端优化"><a href="#移动端优化" class="headerlink" title="移动端优化"></a>移动端优化</h3><p><code>C:\Hexo-Blog\themes\Butterfly\source\css\_third-party\normalize.min.css</code>添加如下css代码：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*移动端优化：去除归档、标签、最新文章、公告、、只保留网站统计*/</span></span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">800px</span>) &#123;</span><br><span class="line">    <span class="selector-id">#aside_content</span></span><br><span class="line">    <span class="selector-tag">div</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:last-child)</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>去除前：</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/a1af071df7c75.png" alt="image.png"></p>
+<p>去除后：</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/03404fbbf2e94.png" alt="image.png"></p>
+<h3 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h3><p>横幅背景</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if the banner of page not setting,it will show the top_img</span></span><br><span class="line">default_top_img: https://i.loli.net/2020/05/01/IuWi8QbHvzjlOPw.jpg</span><br></pre></td></tr></table></figure></div>
+<p>效果</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/339289ece4ef5.png" alt="image.png"></p>
+<h3 id="博客背景"><a href="#博客背景" class="headerlink" title="博客背景"></a>博客背景</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置网站背景</span></span><br><span class="line"><span class="comment"># 可设置图片 或者 顔色</span></span><br><span class="line"><span class="comment"># 图片格式 background: url(http://xxxxxx.com/xxx.jpg)</span></span><br><span class="line"><span class="comment"># 顔色 background: &#x27;#49B202&#x27;</span></span><br><span class="line"><span class="comment"># 留空 显示白色</span></span><br><span class="line">background: url(https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/Jkx5y6.jpg)</span><br></pre></td></tr></table></figure></div>
+<p>效果</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/bb28275cf04f2.png" alt="image.png"></p>
+<h3 id="页脚背景"><a href="#页脚背景" class="headerlink" title="页脚背景"></a>页脚背景</h3><p>打开<code>C:\Hexo-Blog\themes\Butterfly\source\css\_layout\footer.styl</code>文件把<code>background: $light-blue</code>注释掉即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#footer</span></span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">relative</span></span><br><span class="line">  //background: $light-blue</span><br><span class="line">  <span class="selector-tag">background-attachment</span>: <span class="selector-tag">local</span></span><br><span class="line">  <span class="selector-tag">background-position</span>: <span class="selector-tag">bottom</span></span><br><span class="line">  <span class="selector-tag">background-size</span>: <span class="selector-tag">cover</span></span><br></pre></td></tr></table></figure></div>
+<p>效果</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/adb80e3bc8561.png" alt="image.png"></p>
+<h3 id="页脚自定义"><a href="#页脚自定义" class="headerlink" title="页脚自定义"></a>页脚自定义</h3><p><code>C:\Hexo-Blog\themes\Butterfly\layout\includes\footer.pug</code></p>
+<p>修改前：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#footer-wrap</span><br><span class="line">  - var now &#x3D; new Date()</span><br><span class="line">  - var nowYear &#x3D; now.getFullYear()</span><br><span class="line">  if theme.since &amp;&amp; theme.since !&#x3D; nowYear</span><br><span class="line">    .copyright!&#x3D; &#96;&amp;copy;$&#123;theme.since&#125; - $&#123;nowYear&#125; By $&#123;config.author&#125;&#96;</span><br><span class="line">  else</span><br><span class="line">    .copyright!&#x3D; &#96;&amp;copy;$&#123;nowYear&#125; By $&#123;config.author&#125;&#96;</span><br></pre></td></tr></table></figure></div>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/d9b208142afcc.png" alt="image.png"></p>
+<p>修改后：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#footer-wrap</span><br><span class="line">  - var now &#x3D; new Date()</span><br><span class="line">  - var nowYear &#x3D; now.getFullYear()</span><br><span class="line">  if theme.since &amp;&amp; theme.since !&#x3D; nowYear</span><br><span class="line">    .copyright!&#x3D; &#96;&amp;copy;$&#123;theme.since&#125; - $&#123;nowYear&#125; &lt;i style&#x3D;&quot;color:#FF6A6A&quot; class&#x3D;&quot;fa fa-heartbeat&quot;&gt;&lt;&#x2F;i&gt;$&#123;config.author&#125;&#96;</span><br><span class="line">  else</span><br><span class="line">    .copyright!&#x3D; &#96;&amp;copy;$&#123;nowYear&#125; &lt;i style&#x3D;&quot;color:#FF6A6A;animation: announ_animation 0.8s linear infinite;&quot; class&#x3D;&quot;fa fa-heartbeat&quot;&gt;&lt;&#x2F;i&gt; $&#123;config.author&#125;&#96;</span><br></pre></td></tr></table></figure></div>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/b3f1135eee62c.png" alt="image.png"></p>
+<p>页脚自定义内容<br>Butterfly主题配置文件<code>_config.yml</code>里找到<code>footer_custom_text</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">footer_custom_text:</span> <span class="string">我相信我可以，但我一直在路上，所以我有无限的可能！！</span></span><br></pre></td></tr></table></figure></div>
+<p>效果图：</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/37402fca9bee8.png" alt="image.png"></p>
+<h3 id="创建导航栏页面"><a href="#创建导航栏页面" class="headerlink" title="创建导航栏页面"></a>创建导航栏页面</h3><h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure></div>
+<p><code>C:\Hexo-Blog\source\about\index.md</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于我</span><br><span class="line">date: 2020-06-03 17:53:02</span><br><span class="line">type: about</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="section"># 个人简介</span></span><br><span class="line">昵称：</span><br><span class="line">性别：</span><br><span class="line">爱好：</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure></div>
+<p><code>C:\Hexo-Blog\source\categories\index.md</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-06-03 17:53:02</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page link</span><br></pre></td></tr></table></figure></div>
+<p><code>C:\Hexo-Blog\source\link\index.md</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 友情链接</span><br><span class="line">date: 2020-06-03 17:53:02</span><br><span class="line">type: link</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+<p><code>C:\Hexo-Blog\source\</code>目录下新建<code>_data</code>文件夹，文件夹内新建<code>link.yml</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">class:</span></span><br><span class="line">  <span class="attr">class_name:</span> <span class="string">友情链接</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="attr">1:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">Lete乐特</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">https://www.lete114.top/</span></span><br><span class="line">      <span class="attr">avatar:</span> <span class="string">https://www.lete114.top/img/favicon.ico</span></span><br><span class="line">      <span class="attr">descr:</span> <span class="string">每天进步一点点</span></span><br><span class="line">    <span class="attr">2:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">Test</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">https://www.xxxxxx.com/</span></span><br><span class="line">      <span class="attr">avatar:</span> <span class="string">https://xxxxx/favicon.ico</span></span><br><span class="line">      <span class="attr">descr:</span> <span class="string">Test</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">class2:</span></span><br><span class="line">   <span class="attr">class_name:</span> <span class="string">链接无效</span></span><br><span class="line">   <span class="attr">link_list:</span></span><br><span class="line">     <span class="attr">1:</span></span><br><span class="line">       <span class="attr">name:</span> <span class="string">Test</span></span><br><span class="line">       <span class="attr">link:</span> <span class="string">https://yilia.lete114.top/</span></span><br><span class="line">       <span class="attr">avatar:</span> <span class="string">https://www.lete114.top/img/favicon.ico</span></span><br><span class="line">       <span class="attr">descr:</span> <span class="string">Test</span></span><br><span class="line">     <span class="attr">2:</span></span><br><span class="line">       <span class="attr">name:</span> <span class="string">Test</span></span><br><span class="line">       <span class="attr">link:</span> <span class="string">https://yilia.lete114.top/</span></span><br><span class="line">       <span class="attr">avatar:</span> <span class="string">https://www.lete114.top/img/favicon.ico</span></span><br><span class="line">       <span class="attr">descr:</span> <span class="string">Test</span></span><br></pre></td></tr></table></figure></div>
+<p>效果图</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/b2b5c2479ac49.png" alt="image.png"></p>
+<h3 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page messageboard</span><br></pre></td></tr></table></figure></div>
+<p><code>C:\Hexo-Blog\source\messageboard\index.md</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: messageboard</span><br><span class="line">date: 2020-06-10 10:25:42</span><br><span class="line">type: messageboard</span><br><span class="line">---</span><br><span class="line"><span class="section"># 有什么想和Lete乐特说的吗？？</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure></div>
+<p><code>C:\Hexo-Blog\source\tags\index.md</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-06-03 17:53:02</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
+
+
+<h3 id="主题颜色"><a href="#主题颜色" class="headerlink" title="主题颜色"></a>主题颜色</h3><p>默认主题颜色</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">####    美化/效果    ####</span></span><br><span class="line"><span class="comment">#--------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Theme color for customize</span></span><br><span class="line"><span class="comment"># Notice: color value must in double quotes like &quot;#000&quot; or may cause error!</span></span><br><span class="line"><span class="comment"># ---------------</span></span><br><span class="line"> <span class="attr">theme_color:</span></span><br><span class="line">   <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">main:</span> <span class="string">&quot;#49B1F5&quot;</span></span><br><span class="line">   <span class="attr">paginator:</span> <span class="string">&quot;#00c4b6&quot;</span></span><br><span class="line">   <span class="attr">button_hover:</span> <span class="string">&quot;#FF7242&quot;</span></span><br><span class="line">   <span class="attr">text_selection:</span> <span class="string">&quot;#00c4b6&quot;</span></span><br><span class="line">   <span class="attr">link_color:</span> <span class="string">&quot;#99a9bf&quot;</span></span><br><span class="line">   <span class="attr">meta_color:</span> <span class="string">&quot;#858585&quot;</span></span><br><span class="line">   <span class="attr">hr_color:</span> <span class="string">&quot;#A4D8FA&quot;</span></span><br><span class="line">   <span class="attr">code_foreground:</span> <span class="string">&quot;#F47466&quot;</span></span><br><span class="line">   <span class="attr">code_background:</span> <span class="string">&quot;rgba(27, 31, 35, .05)&quot;</span></span><br><span class="line">   <span class="attr">toc_color:</span> <span class="string">&quot;#00c4b6&quot;</span></span><br><span class="line">   <span class="attr">blockquote_padding_color:</span> <span class="string">&quot;#49b1f5&quot;</span></span><br><span class="line">   <span class="attr">blockquote_background_color:</span> <span class="string">&quot;#49b1f5&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h3 id="添加颜色块"><a href="#添加颜色块" class="headerlink" title="添加颜色块"></a>添加颜色块</h3><p><code>C:\Hexo-Blog\themes\Butterfly\source\css\_third-party\normalize.min.css</code>添加，当然你可以加更多颜色，这里我颜色3个色块</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*颜色块-黄*/</span></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-id">#yellow-block</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">2em</span> .<span class="number">6em</span> .<span class="number">3em</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">90%</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">vertical-align</span>: baseline;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.1rem</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#FFD700</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*颜色块-绿色*/</span></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-id">#green-block</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">2em</span> .<span class="number">6em</span> .<span class="number">3em</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">90%</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">vertical-align</span>: baseline;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.1rem</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#5cb85c</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*颜色块-灰色*/</span></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-id">#gray-block</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">2em</span> .<span class="number">6em</span> .<span class="number">3em</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">90%</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">vertical-align</span>: baseline;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0.1rem</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#4f4f4f</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>效果图</p>
+<p>在Marcdown文件内容使用如下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Markdown"><figure class="iseeu highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Test</span><br><span class="line">abbrlink: Test</span><br><span class="line">date: 3020-04-15 21:38:33</span><br><span class="line">cover: https://cdn.jsdelivr.net/gh/lete114/CDN/BoBoPic/05.jpg</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">    -</span> Test</span><br><span class="line"><span class="bullet">    -</span> 测试</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;yellow-block&quot;</span>&gt;</span></span>黄色色块<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;green-block&quot;</span>&gt;</span></span>绿色色块<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;gray-block&quot;</span>&gt;</span></span>灰色色块<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/59711c9161f27.png" alt="image.png"></p>
+<h3 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h3><p><code>C:\Hexo-Blog\themes\Butterfly\source\css\_third-party\normalize.min.css</code>添加如下css代码：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 鼠标图标 */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, .<span class="number">5</span>);</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(https://cdn.jsdelivr.net/gh/lete114/CDN@<span class="number">1.0</span>/Use/Jkll8I.png), auto;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">cursor</span>: <span class="built_in">url</span>(https://cdn.jsdelivr.net/gh/lete114/CDN@<span class="number">1.0</span>/Use/JkuClT.png), auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="文章透明"><a href="#文章透明" class="headerlink" title="文章透明"></a>文章透明</h3><p>打开<code>C:\Hexo-Blog\themes\Butterfly\source\css\_layout\page.styl</code>找到如下代码</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.layout_post</span> &gt; <span class="selector-id">#post</span>,</span><br><span class="line"><span class="selector-class">.layout_page</span> &gt; <span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:not(.recent-posts)</span></span><br><span class="line">  <span class="selector-tag">padding</span>: 50<span class="selector-tag">px</span> 40<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">border-radius</span>: 8<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">background</span>: <span class="selector-tag">rgba</span>(255,255,255,0.7);</span><br><span class="line">  //background: $card-bg     注释掉这条，添加上面 background: rgba(255,255,255,0.7); 这条即可</span><br><span class="line">  <span class="selector-tag">box-shadow</span>: 0 4<span class="selector-tag">px</span> 8<span class="selector-tag">px</span> 6<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(7, 17, 27, .06)</span><br><span class="line">  <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> .3<span class="selector-tag">s</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="修改滚动条"><a href="#修改滚动条" class="headerlink" title="修改滚动条"></a>修改滚动条</h3><p>打开<code>C:\Hexo-Blog\themes\Butterfly\source\css\_global\var.styl</code>找到如下代码:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-pseudo">::-webkit-scrollbar</span></span><br><span class="line">  <span class="selector-tag">width</span>: 8<span class="selector-tag">px</span></span><br><span class="line">  <span class="selector-tag">height</span>: 8<span class="selector-tag">px</span></span><br><span class="line"></span><br><span class="line">*<span class="selector-pseudo">::-webkit-scrollbar-thumb</span></span><br><span class="line">  background: $light-blue</span><br><span class="line"></span><br><span class="line">*<span class="selector-pseudo">::-webkit-scrollbar-track</span></span><br><span class="line">  <span class="selector-tag">background-color</span>: <span class="selector-tag">transparent</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>覆盖掉上面的代码👆</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 滚动条 */</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-track</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">73</span>, <span class="number">177</span>, <span class="number">245</span>, <span class="number">0.2</span>);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">2em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#e58a8a</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(</span><br><span class="line">  <span class="number">45deg</span>,</span><br><span class="line">  rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.4</span>) <span class="number">25%</span>,</span><br><span class="line">  transparent <span class="number">25%</span>,</span><br><span class="line">  transparent <span class="number">50%</span>,</span><br><span class="line">  <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.4</span>) <span class="number">50%</span>,</span><br><span class="line">  <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.4</span>) <span class="number">75%</span>,</span><br><span class="line">  transparent <span class="number">75%</span>,</span><br><span class="line">  transparent</span><br><span class="line">  );</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">2em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-corner</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: transparent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">::-moz-selection</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#e58a8a</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>修改前</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/d45215ce9fb62.png" alt="image.png"></p>
+<p>修改后</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/52750428af86f.png" alt="image.png"></p>
+<h3 id="添加樱花特效"><a href="#添加樱花特效" class="headerlink" title="添加樱花特效"></a>添加樱花特效</h3><p>把下方的内容添加到Butterfly主题下<code>_config.yml</code>文件的<code>inject:</code>下的<code>bottom:</code>里</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/gh/lete114/CDN/Sum/sakura.js&quot;&gt;&lt;/script&gt;#樱花</span></span><br></pre></td></tr></table></figure></div>
+<p>效果图:</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/69e175fb93a8a.png" alt="image.png"></p>
+<h3 id="添加卖萌标题"><a href="#添加卖萌标题" class="headerlink" title="添加卖萌标题"></a>添加卖萌标题</h3><p>把下方的内容添加到Butterfly主题下<code>_config.yml</code>文件的<code>inject:</code>下的<code>bottom:</code>里</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/gh/lete114/CDN/Sum/title.js&quot;&gt;&lt;/script&gt;#樱花</span></span><br></pre></td></tr></table></figure></div>
+<p>效果图:</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/f264b44b01460.png" alt="image.png"></p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/472bd0163b373.png" alt="image.png"></p>
+<h3 id="添加梨花带雨播放器"><a href="#添加梨花带雨播放器" class="headerlink" title="添加梨花带雨播放器"></a>添加梨花带雨播放器</h3><p>梨花带雨播放器：<a target="_blank" rel="noopener" href="https://music.m0x.cn/">官网</a></p>
+<p>播放器有两款样式，这里我选择的是第二种</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/e636976e66d12.png" alt="image.png"></p>
+<p>复制代码添加到Butterfly主题下<code>_config.yml</code>文件的<code>inject:</code>下的<code>bottom:</code>里</p>
+<p>效果图：</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/e131b003bbddb.png" alt="image.png"></p>
+<h3 id="添加Aplayer音乐播放器"><a href="#添加Aplayer音乐播放器" class="headerlink" title="添加Aplayer音乐播放器"></a>添加Aplayer音乐播放器</h3><p>Aplayer音乐播放器：<a target="_blank" rel="noopener" href="https://aplayer.js.org/#//">官网</a></p>
+<p>打开<code>C:\Hexo-Blog\themes\Butterfly\layout\includes\head.pug</code></p>
+<p>尾部添加<code>include ./third-party/aplayer.pug</code></p>
+<p><code>C:\Hexo-Blog\themes\Butterfly\layout\includes\third-party</code>文件夹内新建<code>aplayer.pug</code>内容图下：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if theme.aplayer &amp;&amp; theme.aplayer.enable</span><br><span class="line">	.aplayer(data-id&#x3D;theme.aplayer.id data-server&#x3D;theme.aplayer.server data-type&#x3D;theme.aplayer.type data-fixed&#x3D;theme.aplayer.fixed data-mini&#x3D;theme.aplayer.mini data-listFolded&#x3D;theme.aplayer.listFolded data-order&#x3D;theme.aplayer.order data-preload&#x3D;theme.aplayer.preload)</span><br><span class="line">	each item in theme.aplayer.css</span><br><span class="line">		link(rel&#x3D;&#39;stylesheet&#39;, href&#x3D;item)</span><br><span class="line">	each item in theme.aplayer.js</span><br><span class="line">		script(src&#x3D;item)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>Butterfly主题下<code>_config.yml</code>配置文件里添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##侧边栏歌单</span></span><br><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">js:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">https://cdn.jsdelivr.net/gh/lete114/CDN/music/APlayer/APlayer.min.js</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js</span></span><br><span class="line">  <span class="attr">css:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">https://cdn.jsdelivr.net/gh/lete114/CDN/music/APlayer/APlayer.min.css</span></span><br><span class="line">  <span class="attr">id:</span> <span class="number">4968103795</span>  <span class="comment">#歌单id</span></span><br><span class="line">  <span class="attr">server:</span> <span class="string">netease</span> <span class="comment">#服务商</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">playlist</span> <span class="comment"># 播放菜单</span></span><br><span class="line">  <span class="attr">fixed:</span> <span class="string">&#x27;true&#x27;</span> <span class="comment">#是否开启吸底模式，详细：https://aplayer.js.org/#/home?id=fixed-mode</span></span><br><span class="line">  <span class="attr">order:</span> <span class="string">random</span> <span class="comment"># 音频循环顺序, 可选值: &#x27;list&#x27;, &#x27;random&#x27;</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="string">auto</span> <span class="comment">#预加载，可选值: &#x27;none&#x27;, &#x27;metadata&#x27;, &#x27;auto&#x27;</span></span><br><span class="line">  <span class="attr">listFolded:</span> <span class="string">&#x27;false&#x27;</span> <span class="comment">#列表默认折叠</span></span><br><span class="line">  <span class="attr">autoplay:</span> <span class="literal">true</span> <span class="comment"># 自动播放</span></span><br><span class="line">  <span class="attr">volume:</span> <span class="number">0.1</span> <span class="comment"># 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效</span></span><br></pre></td></tr></table></figure></div>
+
+<p>效果图：</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/10/c11f779543eb1.png" alt="image.png"></p>
+<h3 id="2020-6-17"><a href="#2020-6-17" class="headerlink" title="2020-6-17"></a>2020-6-17</h3><h3 id="添加头部背景视频"><a href="#添加头部背景视频" class="headerlink" title="添加头部背景视频"></a>添加头部背景视频</h3><p>提前说明：(其实也不会有人去看这个，不过我下面也提供了解决办法)</p>
+<p><img src="https://upimage.alexhchu.com/2020/06/17/7bac938f97582.png" alt="image.png"></p>
+<h4 id="Video属性"><a href="#Video属性" class="headerlink" title="Video属性"></a>Video属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>autoplay</td>
+<td>如果出现该属性，则视频在就绪后马上播放。</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>controls</td>
+<td>如果出现该属性，则向用户显示控件，比如播放按钮。</td>
+</tr>
+<tr>
+<td>height</td>
+<td>pixels</td>
+<td>设置视频播放器的高度。</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>loop</td>
+<td>如果出现该属性，则当媒介文件完成播放后再次开始播放。</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>muted</td>
+<td>规定视频的音频输出应该被静音。</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>URL</td>
+<td>规定视频下载时显示的图像，或者在用户点击播放按钮前显示的图像。</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>preload</td>
+<td>如果出现该属性，则视频在页面加载时进行加载，并预备播放。<br> 如果使用 “autoplay”，则忽略该属性。</td>
+</tr>
+<tr>
+<td>src</td>
+<td>url</td>
+<td>要播放的视频的 URL。</td>
+</tr>
+<tr>
+<td>width</td>
+<td>pixels</td>
+<td>设置视频播放器的宽度。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>新建<code>C:\Hexo-Blog\themes\Butterfly\source\js\video.js</code>填入以下内容</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Created by Lete on 2020/6/16.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//判断移动端设备</span></span><br><span class="line">browserRedirect();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">browserRedirect</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> sUserAgent = navigator.userAgent.toLowerCase();</span><br><span class="line">   <span class="keyword">var</span> bIsIpad = sUserAgent.match(<span class="regexp">/ipad/i</span>) == <span class="string">&quot;ipad&quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> bIsIphoneOs = sUserAgent.match(<span class="regexp">/iphone os/i</span>) == <span class="string">&quot;iphone os&quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> bIsMidp = sUserAgent.match(<span class="regexp">/midp/i</span>) == <span class="string">&quot;midp&quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> bIsUc7 = sUserAgent.match(<span class="regexp">/rv:1.2.3.4/i</span>) == <span class="string">&quot;rv:1.2.3.4&quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> bIsUc = sUserAgent.match(<span class="regexp">/ucweb/i</span>) == <span class="string">&quot;ucweb&quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> bIsAndroid = sUserAgent.match(<span class="regexp">/android/i</span>) == <span class="string">&quot;android&quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> bIsCE = sUserAgent.match(<span class="regexp">/windows ce/i</span>) == <span class="string">&quot;windows ce&quot;</span>;</span><br><span class="line">   <span class="keyword">var</span> bIsWM = sUserAgent.match(<span class="regexp">/windows mobile/i</span>) == <span class="string">&quot;windows mobile&quot;</span>;</span><br><span class="line">   <span class="keyword">if</span> (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) &#123;</span><br><span class="line">       <span class="keyword">var</span> html = <span class="string">&quot;&lt;video loop autoplay style=&#x27;height: 100%;width: 100%;object-fit: cover;&#x27;&gt;&lt;source src=&#x27;你的视频地址&#x27;&gt;&lt;/source&gt;&lt;/video&gt;&quot;</span>;</span><br><span class="line">       <span class="comment">/*添加video*/</span></span><br><span class="line">       <span class="built_in">document</span>.getElementById(<span class="string">&quot;nav&quot;</span>).innerHTML += html;</span><br><span class="line"></span><br><span class="line">       <span class="comment">/*打字效果*/</span></span><br><span class="line">       <span class="keyword">var</span> subtitle = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;subtitle&#x27;</span>)</span><br><span class="line">       <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">function</span> <span class="title">typing</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="keyword">var</span> timer = <span class="number">0</span>;</span><br><span class="line">           <span class="keyword">var</span> str = <span class="string">&#x27;不要等到明天，今天就行动起来！！&#x27;</span>;</span><br><span class="line">           <span class="keyword">if</span> (i &lt;= str.length) &#123;</span><br><span class="line">               subtitle.innerHTML = str.slice(<span class="number">0</span>, i++)</span><br><span class="line">               timer = <span class="built_in">setTimeout</span>(typing, <span class="number">300</span>)</span><br><span class="line"></span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               subtitle.innerHTML = str</span><br><span class="line">               <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       typing()</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>在<code>C:\Hexo-Blog\themes\Butterfly\_config.yml</code>里找到<code>inject:</code>下的<code>bottom:</code>添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;js/video.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>当然，你也可以使用gif动态图(这种方法最简单，Lete乐特使用的是视频)</p>
+</blockquote>
+<blockquote>
+<p>在<code>C:\Hexo-Blog\themes\Butterfly\_config.yml</code>里找到<code>default_top_img:</code>添gif图片</p>
+<p>参考Lete乐特：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if the banner of page not setting,it will show the top_img</span></span><br><span class="line"><span class="attr">default_top_img:</span> <span class="string">/img/a.gif</span></span><br></pre></td></tr></table></figure></div>
+</blockquote>
+<p>效果：<br><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/Video/Test.gif"></p>
+<h3 id="2020-6-19"><a href="#2020-6-19" class="headerlink" title="2020-6-19"></a>2020-6-19</h3><h3 id="添加UP酱"><a href="#添加UP酱" class="headerlink" title="添加UP酱"></a>添加UP酱</h3><p>在<code>C:\Hexo-Blog\themes\Butterfly\_config.yml</code>里找到<code>inject:</code>下的<code>bottom:</code>引用</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lete114/CDN/js/upjiang.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>效果图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sundry/Testupjiang.gif"></p>
+<h3 id="添加公告栏装饰"><a href="#添加公告栏装饰" class="headerlink" title="添加公告栏装饰"></a>添加公告栏装饰</h3><p>在<code>C:\Hexo-Blog\themes\Butterfly\_config.yml</code>里找到<code>card_announcement:</code>下的<code>content:</code>后面添加</p>
+<p><img src="https://files.alexhchu.com/2020/06/19/3b466f0fd97ed.png"></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/lete114/CDN/Use/my_bg.gif&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>效果图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sundry/Testgonggao.gif"></p>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/Butterfly-config-2.3.5.html" one-link-mark="yes">http://mengd.lete114.top/article/Butterfly-config-2.3.5.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/Butterfly/"><span>Butterfly</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/优化/"><span>优化</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/dac3150c.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                实用软件
+            </a>
+            
+            
+            
+            <a href="/article/eef7397d.html" class="page-next">
+                (废弃)Butterfly(蝴蝶)主题美化、优化3.0.0RC2
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

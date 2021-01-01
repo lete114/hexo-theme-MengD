@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Java重载和重写的区别</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-05-25 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">1.2k | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>4分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <br>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有时候我真的分不清方法重载和方法重写，总数把这两个混淆</p>
+<p>特此记录下此片文章，方便以后自己查询时不用再去Baidu、Google、Bing了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/11.jpg"></p>
+<a id="more"></a>
+
+<h3 id="Java-重载与重写是什么？有什么区别？"><a href="#Java-重载与重写是什么？有什么区别？" class="headerlink" title="Java 重载与重写是什么？有什么区别？"></a>Java 重载与重写是什么？有什么区别？</h3><p><strong>重载</strong>（Overload）是让类以统一的方式处理不同类型数据的一种手段，实质表现就是多个具有不同的参数个数或者类型的<code>同名函数</code>（返回值类型可随意，不能以返回类型作为重载函数的区分标准）同时存在于同一个类中，是一个类中多态性的一种表现（调用方法时<code>通过传递不同参数个数和参数类型</code>来决定具体使用哪个方法的多态性）</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySurfaceView</span><span class="params">(Cotext context,AttributeSet attrs,<span class="keyword">int</span> defStyle)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(context,attrs,defStyle);</span><br><span class="line">    initView();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySurfaceView</span><span class="params">(Cotext context,AttributeSet attrs)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(context,attrs);</span><br><span class="line">    initView();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MySurfaceView</span><span class="params">(Cotext context)</span></span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(context);</span><br><span class="line">    initView();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><code>重写</code>（Override）是父类与子类之间的多态性，实质是对父类的函数进行重新定义，如果在子类中定义某方法与其父类有相同的名称和参数则该方法被重写，不过子类函数的访问修饰权限不能小于父类的；若子类中的方法与父类中的某一方法具有相同的方法名、返回类型和参数表，则新方法将覆盖原有的方法，如需父类中原有的方法则可使用 <code>super</code> 关键字</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> EditText et_name;</span><br><span class="line">    <span class="keyword">private</span> EditText et_password;</span><br><span class="line">    <span class="keyword">private</span> Button btn_login;</span><br><span class="line">    <span class="keyword">private</span> TextView tv_regist;</span><br><span class="line">    String username;</span><br><span class="line">    String password;</span><br><span class="line">    ProgressDialog p;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span></span>&#123;</span><br><span class="line">        requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);<span class="comment">//继承原类中的方法，但在遇到同名方法时会覆盖原方法，使用当前写的方法</span></span><br><span class="line">        setContentView(R.layout.login);</span><br><span class="line">        init();</span><br><span class="line">        <span class="comment">//新方法</span></span><br><span class="line">        tv_regist.setOnClickListener(<span class="keyword">new</span> registListener());</span><br><span class="line">        btn_login.setOnClickListener(<span class="keyword">new</span> registListener());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>重载规则：</strong>必须具有不同的参数列表； 可以有不同的返回类型；可以有不同的访问修饰符；可以抛出不同的异常。<br><strong>重写规则：</strong><code>重写规则：参数列表必须完全与被重写的方法相同，否则不能称其为重写；返回类型必须一直与被重写的方法相同，否则不能称其为重写；</code>访问修饰符的限制一定要大于等于被重写方法的访问修饰符；重写方法一定不能抛出新的检查异常或者比被重写方法申明更加宽泛的检查型异常，譬如父类方法声明了一个检查异常 IOException，在重写这个方法时就不能抛出 Exception，只能抛出 IOException 的子类异常，可以抛出非检查异常。</p>
+<p><strong>重载与重写是 <code>Java 多态性</code>的不同表现。</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;重写是父类与子类之间多态性的表现，在运行时起作用（动态多态性，譬如实现动态绑定）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而重载是一个类中多态性的表现，在编译时起作用（静态多态性，譬如实现静态绑定）。</p>
+<h3 id="Java-构造方法能否被重写和重载？"><a href="#Java-构造方法能否被重写和重载？" class="headerlink" title="Java 构造方法能否被重写和重载？"></a>Java 构造方法能否被重写和重载？</h3><p>重写是子类方法重写父类的方法，重写的方法名不变，而类的构造方法名必须与类名一致，假设父类的构造方法如果能够被子类重写则子类类名必须与父类类名一致才行，所以 <strong>Java 的构造方法</strong>是<code>不能被重写</code>的。而重载是针对同一个的，所以构造方法<code>可以被重载</code>。</p>
+<h3 id="下面程序的运行结果是什么，为什么？"><a href="#下面程序的运行结果是什么，为什么？" class="headerlink" title="下面程序的运行结果是什么，为什么？"></a>下面程序的运行结果是什么，为什么？</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">( Demo other)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;use Demo equals.&quot;</span> );</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;    </span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;    </span><br><span class="line">    Object o1 =<span class="keyword">new</span> Demo ();</span><br><span class="line">    Object o2 =<span class="keyword">new</span> Demo ();        </span><br><span class="line">    Demo o3 =<span class="keyword">new</span> Demo ();</span><br><span class="line">    Demo o4 =<span class="keyword">new</span> Demo ();</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (o1.equals(o2)) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;o1 is equal with o2.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span>(o3.equals(o4)) &#123;             </span><br><span class="line">            System.out.println(<span class="string">&quot;o3 is equal with o4.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p><strong>答：上面程序的运行结果如下</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use Demo equals.</span><br><span class="line">o3 is equal with o4.</span><br></pre></td></tr></table></figure></div>
+<p>因为 Demo 类中的 public boolean equals(Demo other) 方法并没有重写 Object 类中的 public boolean equals(Object obj) 方法，原因是其违背了参数规则，其中一个是 Demo 类型而另一个是 Object 类型，因此这两个方法是重载关系（发生在编译时）而不是重写关系；<code>故当调用 o1.equals(o2) 时，o2 是 Object 类型参数，实际上调用了 Object 类中的 public boolean equals(Object obj) 方法</code>。因为在编译时 o1 和 o2 都是 Object 类型，而<code>Object 类的 equals</code> 方法是通过比较内存地址才返回 <code>false</code>；当调用 o3.equals(o4) 时，实际上调用了 Demo 类中的 equals(Demo other) 方法，因为在编译时 o3 和 o4 都是 Demo 类型的，所以才有上面的打印。</p>
+<br>
+
+<p>【转载】: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qunqunstyle99/article/details/81007712">https://blog.csdn.net/qunqunstyle99/article/details/81007712</a></p>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/c97bb6c7.html" one-link-mark="yes">http://mengd.lete114.top/article/c97bb6c7.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/记录/"><span>记录</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Java/"><span>Java</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/b6c07012.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Hexo+Yilia进行SEO优化、百度收录、Google(谷歌)收录
+            </a>
+            
+            
+            
+            <a href="/article/a3491c75.html" class="page-next">
+                Java中的==和equals的区别
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

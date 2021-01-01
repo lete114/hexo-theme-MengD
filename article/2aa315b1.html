@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Hexo+Github Pages个人博客CDN加速、优化博客的加载速度、提高用户体验</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-05-28 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">616 | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>2分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <br>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>都知道Github Pages搭建博客后，访问是非常慢，就连Github官网在大陆打开也是很慢，另外我们搭建的个人博客免不了在文章里添加图片，图片一多就会影响博客的加载速度，还有博客需要用到的js文件，每次都需要重Github博客仓库提取资源，总不能每张图片都要压缩内存大小后再上传吧？显然这不是我们想要的，我们要的是方便快捷。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/BoBoPic/12.jpg"></p>
+<a id="more"></a>
+
+<h3 id="优化加载速度"><a href="#优化加载速度" class="headerlink" title="优化加载速度"></a>优化加载速度</h3><blockquote>
+<p>如何优化？选择什么优化方式？</p>
+<blockquote>
+<ol>
+<li>使用CDN加速？</li>
+<li>使用图床？</li>
+<li>第三方托管在线js文件？</li>
+</ol>
+</blockquote>
+</blockquote>
+<h5 id="使用JsDelivr"><a href="#使用JsDelivr" class="headerlink" title="使用JsDelivr"></a>使用JsDelivr</h5><p>他提供npm github wordpress资源的加速，在中国也有很多节点，速度很快。</p>
+<h5 id="为什么使用JsDelivr？"><a href="#为什么使用JsDelivr？" class="headerlink" title="为什么使用JsDelivr？"></a>为什么使用JsDelivr？</h5><p><span style="font-size:30px;color:red;">免费、稳定</span></p>
+<p>不像某些图床网站，用了一段时间就跑路了，如何自己的图片也没了。</p>
+<p>但是如果你使用的是<code>JsDelivr</code>，就算跑路(当然这是不纯在的)，我们的图片依然有保留，因为我们图片等资源是保留再自己的<code>Github</code>仓库里的，所以无需担心</p>
+<h3 id="JsDelivr-CDN加速"><a href="#JsDelivr-CDN加速" class="headerlink" title="JsDelivr CDN加速"></a>JsDelivr CDN加速</h3><p>1.New一个新的Github 仓库，取名为<code>CDN</code>(当然这是自定义的)</p>
+<p>2.将建好的仓库克隆到本地(在自己喜欢的文件加右键选择Git)</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/lete114/CDN.git <span class="comment">### 这里是你的CDN仓库地址</span></span><br></pre></td></tr></table></figure></div>
+<p>3.把图片等资源都放进克隆下来的<code>CDN</code>文件夹下(分类，当人你也可以不分类，我习惯整理我的文件夹【强迫症😊】)如图：</p>
+<p>4.提交到GitHub仓库即可</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加全部内容文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加说明</span></span><br><span class="line">git commit -m<span class="string">&#x27;第一次提交&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交到远程仓库</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></div>
+<p>然后就可以访问：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/%E4%BD%A0%E7%9A%84Github%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BD%A0%E7%9A%84CDN%E4%BB%93%E5%BA%93/%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/12.jpg">https://cdn.jsdelivr.net/gh/你的Github用户名/你的CDN仓库/文件文件夹/12.jpg</a><br>例如：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/12.jpg">https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/12.jpg</a> </p>
+<p>现在请你同时打开这两个地址做比较<br>GitHub:<a target="_blank" rel="noopener" href="https://lete114.github.io/CDN/BoBoPic/01.jpg">https://lete114.github.io/CDN/BoBoPic/01.jpg</a><br>JsDelivr:<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/12.jpg">https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/12.jpg</a></p>
+<p>这个就是本章开头的高清图片，加载速度是不是比Github的速度块？</p>
+<p>细心的已经看到我的CDN后面怎么有个@3.0<br>解释一下：这是第3.0版本的图片，如果不写@3.0版本号的或就会适应当前最新的图片<br><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/SEO/05.png"><br><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/SEO/06.png"></p>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/2aa315b1.html" one-link-mark="yes">http://mengd.lete114.top/article/2aa315b1.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Github/"><span>Github</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/CDN/"><span>CDN</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Jsdeliver/"><span>Jsdeliver</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/f923c9fe.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Hexo+yilia添加背景特效
+            </a>
+            
+            
+            
+            <a href="/article/b6c07012.html" class="page-next">
+                Hexo+Yilia进行SEO优化、百度收录、Google(谷歌)收录
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

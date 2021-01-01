@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">手把手教你，抖音去水印(有手就能学会)</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-07-18 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">616 | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>2分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>相信你在百度搜索可能搜到在线去水印的在线网站吧？<br>或者使用<code>APP</code>去水印，<code>微信小程序</code>去水印？<br>是的，这些的确是去水印最快的方法，不过在使用多次以后，就不能再次使用了<br>有些需要你<code>花钱</code>购买<code>解析次数</code>(下载次数)，或者限制每天只能解析<code>1~~3</code>个视频(可能是按月)<br>其实上面所说的大多都是封装了下面的步骤而实现的自动化去水印</p>
+<p>本片文章获取的无水印视频步骤可能很多，不方便批量处理，但这里只是提供一个去视频水印的一个思路(其他平台自测)</p>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><ol>
+<li><p>点击抖音的分享按钮，获取链接<br>这里我以<code>《烈阳天道Ⅰ》</code>为例<br>地址：<a target="_blank" rel="noopener" href="https://v.douyin.com/JYAYdfH/">https://v.douyin.com/JYAYdfH/</a></p>
+</li>
+<li><p>复制链接浏览器打开<br>打开后按<code>F12</code>—&gt;选择<code>手机模式</code>—&gt;<code>刷新网页</code>—&gt;选择<code>Network</code>—&gt;搜索框内输入<code>item</code>—&gt;选择<code>Headers</code>—&gt;展开<code>General</code><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/DouYin/1.png" alt="image.png"></p>
+</li>
+<li><p>复制<code>Requst URL</code>的链接到地址栏回车(手机模式)<br>打开后按<code>F12</code>—&gt;依次展开—&gt;<code>item_list</code>—&gt;<code>0</code>—&gt;<code>video</code>—&gt;<code>play_addr</code>—&gt;<code>url_list</code>—&gt;<code>0</code><br>最终得到<code>0: &quot;https://aweme.snssdk.com/aweme/v1/playwm/?video_id=v0200f480000bs78bq8ckillkpgb8c8g&amp;ratio=720p&amp;line=0&quot;</code><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/DouYin/2.png" alt="image.png"></p>
+</li>
+<li><p>最后一步<br>复制<code>0</code>后面的链接复制到浏览器地址栏<br>将链接的<code>playwm</code>改为<code>play</code><br>说明：<code>wm</code>为<code>Watermark</code>而Watermark翻译过来就是<code>水印</code><br>修改后：<a target="_blank" rel="noopener" href="https://aweme.snssdk.com/aweme/v1/play/?video_id=v0200f480000bs78bq8ckillkpgb8c8g&amp;ratio=720p&amp;line=0">https://aweme.snssdk.com/aweme/v1/play/?video_id=v0200f480000bs78bq8ckillkpgb8c8g&amp;ratio=720p&amp;line=0</a></p>
+</li>
+<li><p>常见问题<br><code>问：</code>为什么显示下载的是html文件？<br><code>答：</code>因为抖音采取的视频是m3u8格式视频，只需要把html改成mp4即可<br><code>m3u8：</code>将一个视频切片成多个细小的块，然后分发给各个用户(抖音采取的<code>p2p</code>传输模式，大大降低了宽带费用的，如果不采取p2p模式的话，宽带成本是很高的，毕竟日活跃用户那么高)<br><code>问：</code>为什么最后得到的链接输入后回车，白屏？<br><code>答：</code>因该是浏览器问题，或者是被某款杀毒软件拦截，这个问题我也有，不过我把链接放到手机浏览器打开可以在线播放和下载(华为自带浏览器)<br><video id="video" controls style='height: 100%;width: 100%;object-fit: cover;'></video></p>
+<script>
+var video = document.getElementById('video');
+var videoSrc = 'https://cdn.jsdelivr.net/gh/lete114/CDN2/video/lytd/1.m3u8';
+if (Hls.isSupported()) {
+ var hls = new Hls();
+ hls.loadSource(videoSrc);
+ hls.attachMedia(video);
+ hls.on(Hls.Events.MANIFEST_PARSED, function() {
+   video.play();
+ });
+}
+</script>
+</li>
+</ol>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/DouYin.html" one-link-mark="yes">http://mengd.lete114.top/article/DouYin.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/记录/"><span>记录</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/Maven-MyBatis.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Maven-MyBatis
+            </a>
+            
+            
+            
+            <a href="/article/Valine-LeanCloud-Config.html" class="page-next">
+                LeanCloud-Valine保姆级配置教程
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

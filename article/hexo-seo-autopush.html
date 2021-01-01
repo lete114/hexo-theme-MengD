@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Hexo 每天自动提交网站url到搜索引擎</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-12-02 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">1.2k | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>5分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <p>百度收录很蛋疼<br>在此之前用过<a target="_blank" rel="noopener" href="https://www.antmoe.com/">@小康</a>写的<code>hexo-baidupush</code>很不错。</p>
+<p>由于Bing和Google只爬sitemap.xml收录已经很快了，但总是爬sitemap.xml效率肯定没Api提交的快。<br>自己写了Bing的定时自动提交，目前还不支持Google定时自动提交，因为Google的API提交方式很鸡肋</p>
+<blockquote>
+<p>Google indexing API有两个问题</p>
+<ol>
+<li>账户安全密钥不能被泄露(谷歌只支持这种提交方式，对于没有后台的hexo来说是很致命的)</li>
+<li>API提交只能使用json，而这个json格式只能包含一个网站url链接<br>不能多url放到一个json里，所以需要多次请求提交(baidu、bing、只需一次请求)</li>
+</ol>
+</blockquote>
+<p>Google 最优提交方案是本地提交(能解决以上两个问题)<br>如果你有什么好的处理方案欢迎与我交流</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-seo-autopush --save</span><br></pre></td></tr></table></figure></div>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在hexo 的config.yml里添加</p>
+<p>hexo-seo-autopush配置</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># enable: 开启/关闭 推送</span></span><br><span class="line"><span class="comment"># count: 每次提交最新的10篇文章</span></span><br><span class="line"><span class="comment"># https://github.com/lete114/hexo-seo-autopush</span></span><br><span class="line"><span class="attr">hexo_seo_autopush:</span></span><br><span class="line">  <span class="attr">baidu:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">count:</span> <span class="number">100</span></span><br><span class="line">  <span class="attr">bing:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">count:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">google:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">count:</span> <span class="number">10</span></span><br><span class="line">    <span class="attr">google_file:</span> <span class="string">google_service_account.json</span> <span class="comment"># 谷歌服务账户</span></span><br></pre></td></tr></table></figure></div>
+<p>添加<code>Google Push</code>配置和解决push后没有GitHub Actions <code>.github\workflows\AutoPush.yml</code>文件的问题</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">   <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">     <span class="attr">repo:</span> <span class="string">https://github.com/lete114/Test.git</span></span><br><span class="line">     <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line">     <span class="attr">ignore_hidden:</span> <span class="literal">false</span>  <span class="comment"># 忽略隐藏文件及文件夹(目录)</span></span><br><span class="line">   <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">GooglePush</span> <span class="comment"># 谷歌提交</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="获取站长平台密钥"><a href="#获取站长平台密钥" class="headerlink" title="获取站长平台密钥"></a>获取站长平台密钥</h3><h4 id="Baidu-Key"><a href="#Baidu-Key" class="headerlink" title="Baidu Key"></a>Baidu Key</h4><ol>
+<li>打开百度站长平台，点击左侧的普通收录<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/">https://ziyuan.baidu.com/</a><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Hexo-seo-autopush/baidu.png"></li>
+</ol>
+<h4 id="Bing-Key"><a href="#Bing-Key" class="headerlink" title="Bing Key"></a>Bing Key</h4><ol>
+<li>打开Bing站长平台，<a target="_blank" rel="noopener" href="https://www.bing.com/webmasters/home">https://www.bing.com/webmasters/home</a></li>
+<li>点击右上角头像 旁边的齿轮，跟着下图操作<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Hexo-seo-autopush/bing.png"></li>
+</ol>
+<h4 id="Google-Key"><a href="#Google-Key" class="headerlink" title="Google Key"></a>Google Key</h4><ol>
+<li>打开Google indexing API<a target="_blank" rel="noopener" href="https://console.developers.google.com/flows/enableapi?apiid=indexing.googleapis.com&credential=client_key">官网</a></li>
+<li>选择创建项目，点击继续</li>
+<li>点击转到凭据页面</li>
+<li>跟着如下图片步骤<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-seo-autopush/GoogleProof.png" alt="GoogleProof"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-seo-autopush/GoogleAddProof.png" alt="GoogleAddProof"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-seo-autopush/GoogleNone.png" alt="GoogleNone"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-seo-autopush/GoogleKey.png" alt="GoogleKey"><br>json文件内的内容<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;service_account&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;project_id&quot;</span>: <span class="string">&quot;elated-guild-298003&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;private_key_id&quot;</span>: <span class="string">&quot;cf58d669c0e8c8e082b2c403ade5e2548078e384&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;private_key&quot;</span>: <span class="string">&quot;-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDEAJw89yeylRrA\nB+bzOAfQQNgOCABIwEKCy5mMxWSaiXy2RktyCJWjMR2Pgz770NJgClQHPJjsFn0c\nukHufpnuiX3VPlimLANPCRFdU/qp+yiaw4quIhYF1UZJkhmhL30anghUcvi+r9hQ\nw+RwcKrgA4EUzqUJaPdvjtzSoo315PPGfR91ASD5S8gE02yVI8igtYMX7v2x1JYR\n7PwHJwOVemiM9lot8ilvoUbV4BU0vSlwFoxKMJAbEXTmJjEKQi9992rcMW0GzXO8\ncHldUUtURXkt3VFjYTH27KhHiTkTXw+uZRBu1rkubDJkS8lGIWN7Fc/r4HMMCVTu\nXPS6HbJ/AgMBAAECggEANSS7OBaFd3jRL3cVCiZLjA5A5pEJzq/+eKtOn2oYDISx\nwVRO+YTVWdGj47kg1zM4D11NikbGaeDxHFxuKwW9o/04lpyYebneTcw2Hpl6EiOs\nz0WssOlCEmPQ8nrAI0GWiKSHuqoPwtg37TIoGsqZsjKRCby759DDokZYnm3/0sc+\niEllT0ZyBZhGDzyguVLEdCIR2P02q/hQzLyd6ejWGGwZebImbGoILhmuOjVrco0p\nV0JbrrNskjM5Epe7w+CpGftEASJ7Dxa8oj0qIT6cyAipra2AZAGnG9jrLcWpJuhu\nvNeDIFnTfpNEac+khXZZE2++MIQfTX9wGJc8tox2vQKBgQD6yiNvAL7sxExiy6ER\ntLtFQ3bvmMpKRFGvFOyPOtMbmjZ3D1GEtNNKGH4v1TI+tncEy7Q5Dm7nWwpi8yvL\nbh8xKghelAc/CU1nw0xDEDCkMbAwpFg5A5ZDImy3LZsQh0kNXniIMy1vMSt5yLKS\n80gXQKGCxG8t3rP8Qd/2a55g1QKBgQDIExP1nG9sHJaigmitEUwr0Ow6Shqr56Me\nd7995gaV1oLWWCQzrXt/viWkb1W5ZGIxzcWNWz99m4CbvqfewRr598Eenald0csN\nVcIEk+0C+6KqA+jU9Tfs2zow/C7JuKULP2N++o0EoSz/ngokP7f1yLOYbr507v/R\n0cLElQBQAwKBgAbxDWYHKUG4dTzO0hiBXiWepm4fVooTtgcYlyunvywmapeFDwaT\nUr3cS7HbPtbJiiXR1Z02rw8sT+9JN88brzVXKoAjrMer5D6ZA0Vf71i8H1pZUi/R\nz5jwHP48/uvIMtdx4/gxInLPc5qdWYQDw90Q5ueNtF4aqfSzhhV2CR45AoGBAJN9\nPOF6iMjx6jmyWOf8MGK8iOgPaMoA4Ea9j/SHdaNPlvPb1hQid0AcNDObv14Dmj+M\nqW0jLxKxZ4VobufPAsvyz/J51zjKRx11cqldQwNH7QnYB/O1MZzxn1wtC3C5JTG9\ncONSYFJhXoKxRliigEI3ye089jnNVdifAS1ZiflxAoGBANTX1fEMEeNuYU0v3rtd\n5CkPZg4TNZ+y2MGl5xR1LdIgrJ8c9xKoW4rpp7SsOIvHpWX494f90D7o9uFEGSQ4\nyQK53jVzJ0ekGV5BdPF3n3/2j2VEqFLHi7LL4CJSxr6ci7OfBoHOGE8odhevQCCK\njnFzEin0QsBEgIC73fBh6XcH\n-----END PRIVATE KEY-----\n&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;client_email&quot;</span>: <span class="string">&quot;googleindexing@elated-guild-298003.iam.gserviceaccount.com&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;client_id&quot;</span>: <span class="string">&quot;103034240916368863393&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;auth_uri&quot;</span>: <span class="string">&quot;https://accounts.google.com/o/oauth2/auth&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;token_uri&quot;</span>: <span class="string">&quot;https://oauth2.googleapis.com/token&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;auth_provider_x509_cert_url&quot;</span>: <span class="string">&quot;https://www.googleapis.com/oauth2/v1/certs&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;client_x509_cert_url&quot;</span>: <span class="string">&quot;https://www.googleapis.com/robot/v1/metadata/x509/googleindexing%40elated-guild-298003.iam.gserviceaccount.com&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li>打开<a target="_blank" rel="noopener" href="https://search.google.com/search-console">谷歌站长平台</a><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-seo-autopush/GoogleAddUser.png" alt="GoogleAddUser"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-seo-autopush/GoogleAddEmail.png" alt="GoogleAddEmail"></li>
+</ol>
+<h3 id="配置博客仓库"><a href="#配置博客仓库" class="headerlink" title="配置博客仓库"></a>配置博客仓库</h3><ol>
+<li>Name必须是<code>baidu_token</code>和<code>bing_apikey</code>(不区分大小写)<br><img src="https://cdn.jsdelivr.net/gh/lete114/CDN2@latest/img/Hexo-SEO-AutoPush/Secrets.png" alt="Secrets"></li>
+<li>添加完成后<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Hexo-seo-autopush/Secrets-token.png" alt="Secrets-token"></li>
+</ol>
+<h3 id="谷歌的一些问题"><a href="#谷歌的一些问题" class="headerlink" title="谷歌的一些问题"></a>谷歌的一些问题</h3><p>触发谷歌提交的命令是<code>hexo d</code></p>
+<p>由于谷歌需要配合Google indexing API平台提供的json进行提交，而这个json格式不能泄露<br>为防止json泄露只能本地提交，将json放到hexo根目录可自定义重命名(必须对应插件的配置)<br><code>如果你的使用Github Actions自动部署的话请把仓库设置为私有</code><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-seo-autopush/GoogleConfig.png" alt="GoogleConfig"></p>
+<h3 id="提交成功返回状态码"><a href="#提交成功返回状态码" class="headerlink" title="提交成功返回状态码"></a>提交成功返回状态码</h3><p>以上步骤完成后即可<code>hexo d</code>部署了</p>
+<ol>
+<li>看看Github仓库是否上传成功<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Hexo-seo-autopush/code.png"></li>
+<li>点击<code>Actions</code>查看是否执行<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Hexo-seo-autopush/Actions.png"></li>
+<li>点击<code>Auto Push</code>—-&gt;<code>build</code>—–&gt;点击第2步<code>自动提交</code><br>如图43行<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Hexo-seo-autopush/build.png"><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// baidu返回的结果</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;remain&quot;</span>: <span class="number">2060</span>,  <span class="comment">// 表示当天剩余的可推送url条数</span></span><br><span class="line">	<span class="attr">&quot;success&quot;</span>: <span class="number">47</span>    <span class="comment">// 成功推送的url条数</span></span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// bing返回结果(错误)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;ErrorCode&quot;</span>: <span class="number">2</span>,  <span class="comment">// 错误 </span></span><br><span class="line">	<span class="attr">&quot;Message&quot;</span>: <span class="string">&quot;ERROR!!! Quota remaining for today: 2, Submitted: 47&quot;</span></span><br><span class="line">    <span class="comment">// Message：表示 你目前只剩2个url推送，而你现在推送的是47条url</span></span><br><span class="line">    <span class="comment">// bing新用户开始每日只有10个推送额，据我了解连续推送10天(这我也不确定)</span></span><br><span class="line">    <span class="comment">// 如果出现这个错误的话，你就只能先手动添加等系统给你分配额了(分配9999)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// bing返回结果(成功)</span></span><br><span class="line">&#123;<span class="attr">&quot;d&quot;</span>:<span class="literal">null</span>&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li>Google 返回状态码<br>成功返回<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Google response:  &#123;</span><br><span class="line">  urlNotificationMetadata: &#123;</span><br><span class="line">    url: &#x27;https://blog.lete114.top/article/hexo-seo-autopush.html&#x27;,</span><br><span class="line">    latestUpdate: &#123;</span><br><span class="line">      url: &#x27;https://blog.lete114.top/article/hexo-seo-autopush.html&#x27;,</span><br><span class="line">      type: &#x27;URL_UPDATED&#x27;,</span><br><span class="line">      notifyTime: &#x27;2020-12-08T02:31:32.871417693Z&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+出现此错误需要<code>翻墙</code><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">FetchError: request to https://www.googleapis.com/oauth2/v4/token failed, reason: connect ETIMEDOUT 172.217.27.138:443</span><br><span class="line">    at ClientRequest.&lt;anonymous&gt; (D:\Lete\GitHub\Hexo-Butterfly\node_modules\node-fetch\lib\index.js:1461:11)</span><br><span class="line">    at ClientRequest.emit (events.js:321:20)</span><br><span class="line">    at TLSSocket.socketErrorListener (_http_client.js:426:9)</span><br><span class="line">    at TLSSocket.emit (events.js:321:20)</span><br><span class="line">    at emitErrorNT (internal/streams/destroy.js:92:8)</span><br><span class="line">    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)</span><br><span class="line">    at processTicksAndRejections (internal/process/task_queues.js:84:21) &#123;</span><br><span class="line">  message: <span class="string">&#x27;request to https://www.googleapis.com/oauth2/v4/token failed, reason: connect ETIMEDOUT 172.217.27.138:443&#x27;</span>,</span><br><span class="line">  <span class="built_in">type</span>: <span class="string">&#x27;system&#x27;</span>,</span><br><span class="line">  errno: <span class="string">&#x27;ETIMEDOUT&#x27;</span>,</span><br><span class="line">  code: <span class="string">&#x27;ETIMEDOUT&#x27;</span>,</span><br><span class="line">  config: &#123;</span><br><span class="line">    method: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    url: <span class="string">&#x27;https://www.googleapis.com/oauth2/v4/token&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      grant_type: <span class="string">&#x27;urn:ietf:params:oauth:grant-type:jwt-bearer&#x27;</span>,</span><br><span class="line">      assertion: <span class="string">&#x27;eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJnb29nbGVpbmRleGluZ0BzdGF0ZWx5LXRyYW5zaXQtMjk3NzE1LmlhbS5nc2VydmljZWFjY291bnQuY29tIiwic2NvcGUiOiJodHRwczovL3d3d</span></span><br></pre></td></tr></table></figure></div>
+如果出现错误<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">err: Error: Cannot find module &#39;request&#39;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Code"><figure class="iseeu highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">err: Error: Cannot find module &#39;googleapis&#39;</span><br></pre></td></tr></table></figure></div>
+请执行<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install request googleapis</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/hexo-seo-autopush.html" one-link-mark="yes">http://mengd.lete114.top/article/hexo-seo-autopush.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/SEO/"><span>SEO</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Hexo/"><span>Hexo</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/Thymeleaf-GetUrl.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Java SpringBoot Thymeleaf获取当前页面完整URL地址-获取项目访问地址(根目录、域名)
+            </a>
+            
+            
+            
+            <a href="/article/Jsdeliver-video.html" class="page-next">
+                利用Jsdeliver搭建视频床
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

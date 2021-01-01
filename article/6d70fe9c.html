@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Hexo+yilia添加Live2d看板娘</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-06-04 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">772 | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>4分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <br>
+
+<h2 id="添加live2d看板娘"><a href="#添加live2d看板娘" class="headerlink" title="添加live2d看板娘"></a>添加live2d看板娘</h2><p><strong>插件：hexo-helper-live2d<br>github仓库：<a target="_blank" rel="noopener" href="https://github.com/EYHN/hexo-helper-live2d">https://github.com/EYHN/hexo-helper-live2d</a> <br>右下角：可爱小黑猫🐱</strong></p>
+<p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573481131575.png"></p>
+<a id="more"></a>
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h5 id="1-安装插件"><a href="#1-安装插件" class="headerlink" title="1.安装插件"></a>1.安装插件</h5><p>运行命令<code>npm install --save hexo-helper-live2d</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-helper-live2d</span><br><span class="line"></span><br><span class="line">&gt; core-js@<span class="number">2</span>.<span class="number">6</span>.<span class="number">10</span> postinstall H:\Hexo\node_modules\babel-polyfill\node_modules\core-js</span><br><span class="line">&gt; node postinstall || <span class="built_in">echo</span> &quot;ignore&quot;</span><br><span class="line"></span><br><span class="line">Thank you <span class="keyword">for</span> using core-js ( https://github.com/zloirock/core-js ) <span class="keyword">for</span> polyfilling JavaScript standard library!</span><br><span class="line"></span><br><span class="line">The project needs your <span class="built_in">help</span>! Please consider supporting of core-js on Open Collective or Patreon:</span><br><span class="line">&gt; https://opencollective.com/core-js</span><br><span class="line">&gt; https://www.patreon.com/zloirock</span><br><span class="line"></span><br><span class="line">Also, the author of core-js ( https://github.com/zloirock ) is looking <span class="keyword">for</span> a good job -)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; core-js@<span class="number">2</span>.<span class="number">6</span>.<span class="number">10</span> postinstall H:\Hexo\node_modules\babel-runtime\node_modules\core-js</span><br><span class="line">&gt; node postinstall || <span class="built_in">echo</span> &quot;ignore&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; live2d-widget@<span class="number">3</span>.<span class="number">1</span>.<span class="number">4</span> postinstall H:\Hexo\node_modules\live2d-widget</span><br><span class="line">&gt; opencollective-postinstall</span><br><span class="line"></span><br><span class="line">Thank you <span class="keyword">for</span> using live2d-widget!</span><br><span class="line"><span class="keyword">If</span> you rely on this package, please consider supporting our open collective:</span><br><span class="line">&gt; https://opencollective.com/live2d-widgetjs/donate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; hexo-helper-live2d@<span class="number">3</span>.<span class="number">1</span>.<span class="number">1</span> postinstall H:\Hexo\node_modules\hexo-helper-live2d</span><br><span class="line">&gt; opencollective-postinstall</span><br><span class="line"></span><br><span class="line">Thank you <span class="keyword">for</span> using hexo-helper-live2d!</span><br><span class="line"><span class="keyword">If</span> you rely on this package, please consider supporting our open collective:</span><br><span class="line">&gt; https://opencollective.com/hexo-helper-live2d/donate</span><br><span class="line"></span><br><span class="line">npm WARN babel-eslint@<span class="number">10</span>.<span class="number">0</span>.<span class="number">2</span> requires a peer of eslint@&gt;= <span class="number">4</span>.<span class="number">12</span>.<span class="number">1</span> but none is installed. You must install peer dependencies yourself.</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@<span class="number">1</span>.<span class="number">2</span>.<span class="number">9</span> (node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@<span class="number">1</span>.<span class="number">2</span>.<span class="number">9</span>: wanted &#123;&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;&#125; (current: &#123;&quot;os&quot;:&quot;win32&quot;,&quot;arch&quot;:&quot;x64&quot;&#125;)</span><br><span class="line"></span><br><span class="line">+ hexo-helper-live2d@<span class="number">3</span>.<span class="number">1</span>.<span class="number">1</span></span><br><span class="line">added <span class="number">277</span> packages from <span class="number">109</span> contributors and audited <span class="number">25235</span> packages <span class="keyword">in</span> <span class="number">255</span>.<span class="number">268</span>s</span><br><span class="line">found <span class="number">20</span> vulnerabilities (<span class="number">7</span> low, <span class="number">6</span> moderate, <span class="number">6</span> high, <span class="number">1</span> critical)</span><br><span class="line">  run `npm audit fix` to fix them, or `npm audit` <span class="keyword">for</span> details</span><br></pre></td></tr></table></figure></div>
+<h5 id="2-选择模型"><a href="#2-选择模型" class="headerlink" title="2.选择模型"></a>2.选择模型</h5><p><strong>可到 <a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">https://huaji8.top/post/live2d-plugin-2.0/</a> 预览效果。</strong></p>
+<p><strong>命令为:<code>npm install live2d-widget-model-模型名</code>，模型为可参考上面的预览内容。</strong></p>
+<p><strong>安装模型:</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ npm install live2d-widget-model-hijiki</span><br><span class="line">npm WARN babel-eslint@<span class="number">10</span>.<span class="number">0</span>.<span class="number">2</span> requires a peer of eslint@&gt;= <span class="number">4</span>.<span class="number">12</span>.<span class="number">1</span> but none is installed. You must install peer dependencies yourself.</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@<span class="number">1</span>.<span class="number">2</span>.<span class="number">9</span> (node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@<span class="number">1</span>.<span class="number">2</span>.<span class="number">9</span>: wanted &#123;&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;&#125; (current: &#123;&quot;os&quot;:&quot;win32&quot;,&quot;arch&quot;:&quot;x64&quot;&#125;)</span><br><span class="line"></span><br><span class="line">+ live2d-widget-model-hijiki@<span class="number">1</span>.<span class="number">0</span>.<span class="number">5</span></span><br><span class="line">added <span class="number">1</span> package <span class="keyword">in</span> <span class="number">52</span>.<span class="number">155</span>s</span><br></pre></td></tr></table></figure></div>
+<h5 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h5><p><strong>站点的配置文件<code>_config.yml</code>或者是主题的配置文件中添加：</strong></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Sql"><figure class="iseeu highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Live2D</span><br><span class="line">## https:<span class="operator">/</span><span class="operator">/</span>github.com<span class="operator">/</span>EYHN<span class="operator">/</span>hexo<span class="operator">-</span>helper<span class="operator">-</span>live2d</span><br><span class="line">live2d:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  scriptFrom: <span class="keyword">local</span></span><br><span class="line">  pluginRootPath: live2dw<span class="operator">/</span></span><br><span class="line">  pluginJsPath: lib<span class="operator">/</span></span><br><span class="line">  pluginModelPath: assets<span class="operator">/</span></span><br><span class="line">  tagMode: <span class="literal">false</span></span><br><span class="line">  debug: <span class="literal">false</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d<span class="operator">-</span>widget<span class="operator">-</span>model<span class="operator">-</span>hijiki # 模型：https:<span class="operator">/</span><span class="operator">/</span>huaji8.top<span class="operator">/</span>post<span class="operator">/</span>live2d<span class="operator">-</span>plugin<span class="number">-2.0</span><span class="operator">/</span></span><br><span class="line">  display:</span><br><span class="line">    position: <span class="keyword">right</span></span><br><span class="line">    width: <span class="number">150</span></span><br><span class="line">    height: <span class="number">300</span></span><br><span class="line">  mobile:</span><br><span class="line">    <span class="keyword">show</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+<br>
+
+<p><strong>注意这里的use参数是上面安装的那个模型全名</strong></p>
+<h5 id="4-效果图"><a href="#4-效果图" class="headerlink" title="4.效果图"></a>4.效果图</h5><p><strong>可爱的小黑猫已上线。如果不起效，一般需要重新生成<code>hexo clean & hexo g</code>。</strong><br><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573481131575.png"></p>
+<h5 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h5><ul>
+<li>添加动画一般都会比较耗内存，请自行选择是否添加。</li>
+<li>魔改版：在网页中添加Live2D看板娘，基于next主题。<br>&nbsp;&nbsp;&nbsp;&nbsp;github：<a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">https://github.com/stevenjoezhang/live2d-widget</a></li>
+<li>魔改2：<a target="_blank" rel="noopener" href="https://www.fghrsh.net/post/123.html">https://www.fghrsh.net/post/123.html</a></li>
+</ul>
+<h3 id="取消看板娘"><a href="#取消看板娘" class="headerlink" title="取消看板娘"></a>取消看板娘</h3><p><strong>将配置中的<code>enable</code>设置成<code>false</code>即可。</strong></p>
+<h5 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h5><p><strong>运行命令下载插件，删除配置信息：</strong><br><br></p>
+<p><strong>1.卸载模型：npm install live2d-widget-model-模型名</strong><br><strong>2.卸载live2d插件：npm uninstall hexo-helper-live2d</strong><br><strong>3.去掉站点_config.yml下的配置信息即可。</strong></p>
+<p>【转载】<a target="_blank" rel="noopener" href="https://www.yansheng.xyz/article/e239dc63.html">https://www.yansheng.xyz/article/e239dc63.html</a></p>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/6d70fe9c.html" one-link-mark="yes">http://mengd.lete114.top/article/6d70fe9c.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Hexo/"><span>Hexo</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Yilia/"><span>Yilia</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Live2d/"><span>Live2d</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/eef7397d.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                (废弃)Butterfly(蝴蝶)主题美化、优化3.0.0RC2
+            </a>
+            
+            
+            
+            <a href="/article/f923c9fe.html" class="page-next">
+                Hexo+yilia添加背景特效
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

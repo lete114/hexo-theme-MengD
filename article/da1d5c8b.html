@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">LeanCloud因流控原因的解决办法</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-06-17 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">782 | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>2分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间很多人都遇到<code>因流控原因，通过定时任务唤醒体验版实例失败，建议升级至标准版云引擎实例避免休眠</code>，我也不例外，于是在网上查一下有没有解决办法，还真有几个，分别是</p>
+<blockquote>
+<ol>
+<li>cron-job</li>
+<li>GitHub+Actions</li>
+<li>Ajax请求唤醒</li>
+</ol>
+</blockquote>
+<p>之前我使用的是<code>GitHub+Actions</code>,当时我也不知道这玩意儿是啥(刚接触Github)，就照着教程走一遍，过程中也是遇到很多问题，我觉得这个对小白不是很友好，后来想用<code>Ajax请求唤醒</code>，但我没有那么做，还是坚持使用了<code>GitHub+Actions</code>直到最近我发现我的<code>GitHub+Actions</code>已经抱错5天了<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/1.png" alt="image.png"></p>
+<p>于是我经过尝试，用云监控系统也能唤醒LeanCloud(之前搭建过秒赞网，而秒赞网是需要监控的，有一些了解)于是我就用秒赞网的监控系统尝试了一下，果真可以</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/2.png" alt="image.png"></p>
+<p>考虑到秒赞网频繁使用基本上是3~10秒执行好几次，随后我就换了腾讯云监控，但是腾讯云监控页面我看不懂，想着腾讯云都有监控系统，阿里因该也有，就上阿里云查了一下。也有，页面看上去比腾讯云的易懂。</p>
+<h3 id="cron-job缺点"><a href="#cron-job缺点" class="headerlink" title="cron-job缺点"></a>cron-job缺点</h3><blockquote>
+<ol>
+<li>页面全英文(这个不重要)</li>
+<li>需要配置的选项多</li>
+</ol>
+</blockquote>
+<h3 id="Ajax请求唤醒-缺点"><a href="#Ajax请求唤醒-缺点" class="headerlink" title="Ajax请求唤醒 - 缺点"></a>Ajax请求唤醒 - 缺点</h3><blockquote>
+<ol>
+<li>好像没啥缺点，这个我也不清楚(没仔细看)</li>
+<li>后台地址暴露</li>
+<li>参考：<a target="_blank" rel="noopener" href="https://crosschannel.cc/daily/valine-admin-autoAwaken.html">https://crosschannel.cc/daily/valine-admin-autoAwaken.html</a></li>
+</ol>
+</blockquote>
+<h3 id="GitHub-Actions缺点"><a href="#GitHub-Actions缺点" class="headerlink" title="GitHub+Actions缺点"></a>GitHub+Actions缺点</h3><blockquote>
+<ol>
+<li>每次执行都会commit一次(现在我一次commit八百多次了)</li>
+<li>抱错看不懂(个人)</li>
+<li>参考：<a target="_blank" rel="noopener" href="https://www.antmoe.com/posts/ff6aef7b/index.html">https://www.antmoe.com/posts/ff6aef7b/index.html</a></li>
+</ol>
+</blockquote>
+<h2 id="方法一-推荐"><a href="#方法一-推荐" class="headerlink" title="方法一(推荐)"></a>方法一(推荐)</h2><p>阿里云监控缺点：<code>不能指定监控时间</code></p>
+<p>你可以在早上<code>8点</code>开启阿里云监控，这样运行LeanCloud到晚上<code>0:00</code>时就LeanCloud会强制睡眠<br>(阿里再怎么监控，系统也不会唤醒，这样就可以保证LeanCloud有足够的睡眠了)<br>LeanCloud睡瞒8个小时后，阿里又可以监控了，这样也是可行的<br>阿里云监控系统地址:<a target="_blank" rel="noopener" href="https://cloudmonitor.console.aliyun.com/?spm=5176.2020520111.nav-right.3.65b7d103hrc0uW#/newSite/list/">https://cloudmonitor.console.aliyun.com/?spm=5176.2020520111.nav-right.3.65b7d103hrc0uW#/newSite/list/</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/3.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/4.png" alt="image.png"></p>
+<p>任务昵称自定义，监控地址填写<code>valine-admin</code>配置里的ADMIN_URL就是云引擎后台地址(也就是最后一张图片的Web主机域名)</p>
+<p>监控频率看自己喜好，我这里选择30分钟(下面其他配置默认就好)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/5.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/6.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/7.png" alt="image.png"></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>Lete乐特个人搭建的免费监控网<br>我已经快1个月了(2020-6-20—–7-10)<br>测试了一个月，基本上没什么问题<br>能每天正常按照你设置的时间唤醒<code>LeanCloud</code><br>建议加群：<code>939534493</code><br>出现任何问题可以及时通知与处理</p>
+<p>监控网源码：<a target="_blank" rel="noopener" href="https://656e-env-jxscvzag-1301289878.tcb.qcloud.la/jk.zip">https://656e-env-jxscvzag-1301289878.tcb.qcloud.la/jk.zip</a></p>
+<p>地址：<a target="_blank" rel="noopener" href="https://jk.lete114.top/">https://jk.lete114.top</a></p>
+<p>注册就不多说了，这谁都会</p>
+<p>注册登陆后选择<code>任务管理</code>—&gt;<code>【系统1】</code>—&gt;<code>添加监控任务</code>—&gt;<code>提交</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/LeanCloud-auto-wakeup/8.png" alt="image.png"></p>
+<p><span style="font-size:18px"> LeanCloud的相关配置：<a target="_blank" rel="noopener" href="https://lete114.now.sh/article/Valine-LeanCloud-Config.html">LeanCloud-Valine 保姆级配置教程</a></span></p>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/da1d5c8b.html" one-link-mark="yes">http://mengd.lete114.top/article/da1d5c8b.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Valine/"><span>Valine</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/LeanCloud/"><span>LeanCloud</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/3a86607d.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Hexo-abbrlink博客URL持久化、优化
+            </a>
+            
+            
+            
+            <a href="/article/45a2a677.html" class="page-next">
+                腾讯云静态网站托管、托管静态博客(Hexo)(云开发 CloudBase)
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

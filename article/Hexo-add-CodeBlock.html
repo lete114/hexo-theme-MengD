@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Hexo-添加代码块边框</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-09-21 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">1.4k | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>7分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如何给<code>Hexo</code>代码块添加代码块边框？<br>看到其他主题的代码块边框很好看，而且还显示代码语言功能，而自己使用的主题没有代码块边框<br>很想用这种功能，很无奈，这样扒别人网站上的样式样式是很繁琐，且枯燥的，就算扒完样式后<br>该如何在<code>Hexo</code>生成页面的时候给代码块插入样式呢？<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-add-CodeBlock/2.png" alt="emoje"></p>
+<p>那么废话不多说，看下面正文</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ol>
+<li><p>在<code>D:\Lete\Blog\themes\Yilia-Pro\scripts\</code>下新建<code>codeblock.js</code>(名字自定义)</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码块显示代码框以及代码类型</span></span><br><span class="line"><span class="keyword">var</span> attributes = [</span><br><span class="line">    <span class="string">&#x27;autocomplete=&quot;off&quot;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;autocorrect=&quot;off&quot;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;autocapitalize=&quot;off&quot;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;spellcheck=&quot;false&quot;&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;contenteditable=&quot;false&quot;&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> attributesStr = attributes.join(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"></span><br><span class="line">hexo.extend.filter.register(<span class="string">&#x27;after_post_render&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="regexp">/&lt;figure class=&quot;highlight ([a-zA-Z]+)&quot;&gt;.*?&lt;\/figure&gt;/</span>.test(data.content)) &#123;</span><br><span class="line">        data.content = data.content.replace(<span class="regexp">/&lt;figure class=&quot;highlight ([a-zA-Z]+)&quot;&gt;.*?&lt;\/figure&gt;/</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> language = <span class="built_in">RegExp</span>.$1 || <span class="string">&#x27;code&#x27;</span></span><br><span class="line">            <span class="keyword">var</span> lastMatch = <span class="built_in">RegExp</span>.lastMatch</span><br><span class="line">            <span class="keyword">if</span> (language==<span class="string">&#x27;plain&#x27;</span>)&#123;</span><br><span class="line">                language=<span class="string">&#x27;code&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            lastMatch = lastMatch.replace(<span class="regexp">/&lt;figure class=&quot;highlight /</span>, <span class="string">&#x27;&lt;figure class=&quot;iseeu highlight &#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;&lt;div class=&quot;highlight-wrap&quot;&#x27;</span> + attributesStr + <span class="string">&#x27;data-rel=&quot;&#x27;</span></span><br><span class="line">                + language.replace(language[<span class="number">0</span>],language[<span class="number">0</span>].toUpperCase()) + <span class="string">&#x27;&quot;&gt;&#x27;</span> + lastMatch + <span class="string">&#x27;&lt;/div&gt;&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div></li>
+<li><p>在<code>D:\Lete\Blog\themes\Yilia-Pro\source\css\</code>下新建<code>_highlight</code>(这个文件夹可选)<br>然后新建<code>codeFrame.styl</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Styl"><figure class="iseeu highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">@require <span class="string">&#x27;theme&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Mac代码框样式*/</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.highlight-wrap</span>[data-rel]:hover</span><br><span class="line">    <span class="attribute">transition</span> box-shadow <span class="number">0.3s</span> ease-in-out</span><br><span class="line">    <span class="attribute">box-shadow</span> <span class="number">0</span> <span class="number">0px</span> <span class="number">30px</span> <span class="number">0px</span> rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.4</span>)</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.highlight-wrap</span>[data-rel]</span><br><span class="line">    <span class="attribute">position</span> relative</span><br><span class="line">    <span class="attribute">overflow</span> hidden</span><br><span class="line">    <span class="attribute">border-radius</span> <span class="number">10px</span></span><br><span class="line">    <span class="attribute">box-shadow</span> <span class="number">0</span> <span class="number">0px</span> <span class="number">10px</span> <span class="number">0px</span> rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.4</span>)</span><br><span class="line">    &amp;::before</span><br><span class="line">      <span class="attribute">content</span> attr(data-rel)</span><br><span class="line">      <span class="attribute">height</span> <span class="number">38px</span></span><br><span class="line">      <span class="attribute">line-height</span> <span class="number">38px</span></span><br><span class="line">      <span class="attribute">background</span> <span class="variable">$highlight</span>-wrap</span><br><span class="line">      <span class="attribute">color</span> <span class="variable">$highlight</span>-foreground</span><br><span class="line">      <span class="attribute">font-size</span> <span class="number">16px</span></span><br><span class="line">      <span class="attribute">position</span> absolute</span><br><span class="line">      <span class="attribute">top</span> <span class="number">0</span></span><br><span class="line">      <span class="attribute">left</span> <span class="number">0</span></span><br><span class="line">      <span class="attribute">width</span> <span class="number">100%</span></span><br><span class="line">      <span class="attribute">font-weight</span> bold</span><br><span class="line"></span><br><span class="line">      if hexo-config(&#x27;highlight_theme&#x27;) == mac || hexo-config(&#x27;highlight_theme&#x27;) == &#x27;mac light&#x27;</span><br><span class="line">        <span class="attribute">padding</span> <span class="number">0px</span> <span class="number">80px</span></span><br><span class="line">      <span class="attribute">text-indent</span> <span class="number">15px</span></span><br><span class="line">      <span class="attribute">float</span> left</span><br><span class="line"></span><br><span class="line">    if hexo-config(&#x27;highlight_theme&#x27;) == mac || hexo-config(&#x27;highlight_theme&#x27;) == &#x27;mac light&#x27;</span><br><span class="line">      &amp;::after</span><br><span class="line">         <span class="attribute">content</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line">         <span class="attribute">position</span> absolute</span><br><span class="line">         -webkit-<span class="attribute">border-radius</span> <span class="number">50%</span></span><br><span class="line">         <span class="attribute">border-radius</span> <span class="number">50%</span></span><br><span class="line">         <span class="attribute">background</span> <span class="number">#fc625d</span></span><br><span class="line">         <span class="attribute">width</span> <span class="number">12px</span></span><br><span class="line">         <span class="attribute">height</span> <span class="number">12px</span></span><br><span class="line">         <span class="attribute">top</span> <span class="number">0</span></span><br><span class="line">         <span class="attribute">left</span> <span class="number">20px</span></span><br><span class="line">         <span class="attribute">margin-top</span> <span class="number">13px</span></span><br><span class="line">         -webkit-<span class="attribute">box-shadow</span> <span class="number">20px</span> <span class="number">0px</span> <span class="number">#fdbc40</span>, <span class="number">40px</span> <span class="number">0px</span> <span class="number">#35cd4b</span></span><br><span class="line">         <span class="attribute">box-shadow</span> <span class="number">20px</span> <span class="number">0px</span> <span class="number">#fdbc40</span>, <span class="number">40px</span> <span class="number">0px</span> <span class="number">#35cd4b</span></span><br><span class="line">         <span class="attribute">z-index</span> <span class="number">3</span></span><br></pre></td></tr></table></figure></div>
+<p>新建<code>diff.styl</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Styl"><figure class="iseeu highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For diff highlight</span></span><br><span class="line"><span class="selector-tag">figure</span>.highlight</span><br><span class="line">  table</span><br><span class="line">    &amp;::-webkit-scrollbar-thumb</span><br><span class="line">      <span class="attribute">background</span>: <span class="variable">$highlight</span>-scrollbar</span><br><span class="line"></span><br><span class="line">  pre .deletion</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$highlight</span>-deletion</span><br><span class="line"></span><br><span class="line">  pre .addition</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$highlight</span>-addition</span><br><span class="line"></span><br><span class="line">  pre .meta</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$highlight</span>-purple</span><br><span class="line"></span><br><span class="line">  pre</span><br><span class="line">    .comment</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-comment</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.variable</span>,</span><br><span class="line">    <span class="selector-class">.attribute</span>,</span><br><span class="line">    <span class="selector-class">.regexp</span>,</span><br><span class="line">    <span class="selector-class">.ruby</span> <span class="selector-class">.constant</span>,</span><br><span class="line">    <span class="selector-class">.xml</span> <span class="selector-class">.tag</span> <span class="selector-class">.title</span>,</span><br><span class="line">    <span class="selector-class">.xml</span> <span class="selector-class">.pi</span>,</span><br><span class="line">    <span class="selector-class">.xml</span> <span class="selector-class">.doctype</span>,</span><br><span class="line">    <span class="selector-class">.html</span> <span class="selector-class">.doctype</span>,</span><br><span class="line">    <span class="selector-class">.css</span> <span class="selector-class">.id</span>,</span><br><span class="line">    <span class="selector-class">.tag</span> <span class="selector-class">.name</span>,</span><br><span class="line">    <span class="selector-class">.css</span> <span class="selector-class">.class</span>,</span><br><span class="line">    <span class="selector-class">.css</span> .pseudo</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-red</span><br><span class="line"></span><br><span class="line">    .tag</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-aqua</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.number</span>,</span><br><span class="line">    <span class="selector-class">.preprocessor</span>,</span><br><span class="line">    <span class="selector-class">.literal</span>,</span><br><span class="line">    <span class="selector-class">.params</span>,</span><br><span class="line">    <span class="selector-class">.constant</span>,</span><br><span class="line">    .command</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-orange</span><br><span class="line"></span><br><span class="line">    .built_in</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-yellow</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.ruby</span> <span class="selector-class">.class</span> <span class="selector-class">.title</span>,</span><br><span class="line">    <span class="selector-class">.css</span> <span class="selector-class">.rules</span> <span class="selector-class">.attribute</span>,</span><br><span class="line">    <span class="selector-class">.string</span>,</span><br><span class="line">    <span class="selector-class">.value</span>,</span><br><span class="line">    <span class="selector-class">.inheritance</span>,</span><br><span class="line">    <span class="selector-class">.header</span>,</span><br><span class="line">    <span class="selector-class">.ruby</span> <span class="selector-class">.symbol</span>,</span><br><span class="line">    <span class="selector-class">.xml</span> <span class="selector-class">.cdata</span>,</span><br><span class="line">    <span class="selector-class">.special</span>,</span><br><span class="line">    <span class="selector-class">.number</span>,</span><br><span class="line">    .formula</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-green</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.keyword</span>,</span><br><span class="line">    <span class="selector-class">.title</span>,</span><br><span class="line">    <span class="selector-class">.css</span> .hexcolor</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-aqua</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.function</span>,</span><br><span class="line">    <span class="selector-class">.python</span> <span class="selector-class">.decorator</span>,</span><br><span class="line">    <span class="selector-class">.python</span> <span class="selector-class">.title</span>,</span><br><span class="line">    <span class="selector-class">.ruby</span> <span class="selector-class">.function</span> <span class="selector-class">.title</span>,</span><br><span class="line">    <span class="selector-class">.ruby</span> <span class="selector-class">.title</span> <span class="selector-class">.keyword</span>,</span><br><span class="line">    <span class="selector-class">.perl</span> <span class="selector-class">.sub</span>,</span><br><span class="line">    <span class="selector-class">.javascript</span> <span class="selector-class">.title</span>,</span><br><span class="line">    <span class="selector-class">.coffeescript</span> .title</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-blue</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.tag</span> <span class="selector-class">.attr</span>,</span><br><span class="line">    <span class="selector-class">.javascript</span> .function</span><br><span class="line">      <span class="attribute">color</span>: <span class="variable">$highlight</span>-purple</span><br></pre></td></tr></table></figure></div>
+<p>新建<code>theme.styl</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Styl"><figure class="iseeu highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*代码颜色处理*/</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$highlight_theme</span> = hexo-config(<span class="string">&#x27;highlight_theme&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$highlight_theme</span> == <span class="string">&#x27;default&#x27;</span></span><br><span class="line">  <span class="variable">$highlight</span>-wrap = <span class="number">#222d32</span></span><br><span class="line">  <span class="variable">$highlight</span>-<span class="attribute">background</span> = <span class="number">#263238</span></span><br><span class="line">  <span class="variable">$highlight</span>-current-line = <span class="number">#efefef</span></span><br><span class="line">  <span class="variable">$highlight</span>-selection = <span class="number">#80CBC4</span>20</span><br><span class="line">  <span class="variable">$highlight</span>-foreground = <span class="number">#EEFFFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-comment = <span class="number">#546E7A</span></span><br><span class="line">  <span class="variable">$highlight</span>-red = <span class="number">#FF5370</span></span><br><span class="line">  <span class="variable">$highlight</span>-orange = <span class="number">#F78C6C</span></span><br><span class="line">  <span class="variable">$highlight</span>-yellow = <span class="number">#FFCB6B</span></span><br><span class="line">  <span class="variable">$highlight</span>-green = <span class="number">#C3E88D</span></span><br><span class="line">  <span class="variable">$highlight</span>-aqua = <span class="number">#89DDFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-blue = <span class="number">#82AAFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-purple = <span class="number">#C792EA</span></span><br><span class="line">  <span class="variable">$highlight</span>-deletion = <span class="number">#BF42BF</span></span><br><span class="line">  <span class="variable">$highlight</span>-addition = <span class="number">#105EDE</span></span><br><span class="line">  <span class="variable">$highlight</span>-gutter = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .5),</span><br><span class="line">    bg-<span class="attribute">color</span>: <span class="variable">$highlight</span>-background</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-tools = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .8),</span><br><span class="line">    bg-<span class="attribute">color</span>: darken(<span class="variable">$highlight</span>-background, <span class="number">2</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-scrollbar = darken(<span class="variable">$highlight</span>-<span class="attribute">background</span>, <span class="number">6</span>)</span><br><span class="line"></span><br><span class="line">if $highlight_theme == &#x27;darker&#x27; || ($highlight_theme == &#x27;mac&#x27;)</span><br><span class="line">  <span class="variable">$highlight</span>-wrap = <span class="number">#1c1c1c</span></span><br><span class="line">  <span class="variable">$highlight</span>-<span class="attribute">background</span> = <span class="number">#212121</span></span><br><span class="line">  <span class="variable">$highlight</span>-current-line = <span class="number">#282a2e</span></span><br><span class="line">  <span class="variable">$highlight</span>-selection = <span class="number">#616161</span>50</span><br><span class="line">  <span class="variable">$highlight</span>-foreground = <span class="number">#EEFFFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-comment = <span class="number">#969896</span></span><br><span class="line">  <span class="variable">$highlight</span>-red = <span class="number">#FF5370</span></span><br><span class="line">  <span class="variable">$highlight</span>-orange = <span class="number">#F78C6C</span></span><br><span class="line">  <span class="variable">$highlight</span>-yellow = <span class="number">#FFCB6B</span></span><br><span class="line">  <span class="variable">$highlight</span>-green = <span class="number">#C3E88D</span></span><br><span class="line">  <span class="variable">$highlight</span>-aqua = <span class="number">#89DDFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-blue = <span class="number">#82AAFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-purple = <span class="number">#C792EA</span></span><br><span class="line">  <span class="variable">$highlight</span>-deletion = <span class="number">#BF42BF</span></span><br><span class="line">  <span class="variable">$highlight</span>-addition = <span class="number">#105EDE</span></span><br><span class="line">  $highlight-mac-border = rgba(0, 0, 0, .4)</span><br><span class="line">  <span class="variable">$highlight</span>-gutter = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .5),</span><br><span class="line">    bg-<span class="attribute">color</span>: <span class="variable">$highlight</span>-background</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-tools = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .8),</span><br><span class="line">    bg-<span class="attribute">color</span>: darken(<span class="variable">$highlight</span>-background, <span class="number">2</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-scrollbar = darken(<span class="variable">$highlight</span>-<span class="attribute">background</span>, <span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$highlight_theme</span> == <span class="string">&#x27;pale night&#x27;</span></span><br><span class="line">  <span class="variable">$highlight</span>-wrap = <span class="number">#252938</span></span><br><span class="line">  <span class="variable">$highlight</span>-<span class="attribute">background</span> = <span class="number">#292D3E</span></span><br><span class="line">  <span class="variable">$highlight</span>-current-line = <span class="number">#393939</span></span><br><span class="line">  <span class="variable">$highlight</span>-selection = <span class="number">#717CB4</span>50</span><br><span class="line">  <span class="variable">$highlight</span>-foreground = <span class="number">#A6ACCD</span></span><br><span class="line">  <span class="variable">$highlight</span>-comment = <span class="number">#676E95</span></span><br><span class="line">  <span class="variable">$highlight</span>-red = <span class="number">#FF5370</span></span><br><span class="line">  <span class="variable">$highlight</span>-orange = <span class="number">#F78C6C</span></span><br><span class="line">  <span class="variable">$highlight</span>-yellow = <span class="number">#FFCB6B</span></span><br><span class="line">  <span class="variable">$highlight</span>-green = <span class="number">#C3E88D</span></span><br><span class="line">  <span class="variable">$highlight</span>-aqua = <span class="number">#89DDFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-blue = <span class="number">#82AAFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-purple = <span class="number">#C792EA</span></span><br><span class="line">  <span class="variable">$highlight</span>-deletion = <span class="number">#BF42BF</span></span><br><span class="line">  <span class="variable">$highlight</span>-addition = <span class="number">#105EDE</span></span><br><span class="line">  <span class="variable">$highlight</span>-gutter = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .5),</span><br><span class="line">    bg-<span class="attribute">color</span>: <span class="variable">$highlight</span>-background</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-tools = &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$highlight</span>-foreground,</span><br><span class="line">    bg-<span class="attribute">color</span>: darken(<span class="variable">$highlight</span>-background, <span class="number">2</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-scrollbar = darken(<span class="variable">$highlight</span>-<span class="attribute">background</span>, <span class="number">6</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$highlight_theme</span> == <span class="string">&#x27;ocean&#x27;</span></span><br><span class="line">  <span class="variable">$highlight</span>-wrap = <span class="number">#0b0d14</span></span><br><span class="line">  <span class="variable">$highlight</span>-<span class="attribute">background</span> = <span class="number">#0F111A</span></span><br><span class="line">  <span class="variable">$highlight</span>-current-line = <span class="number">#000000</span></span><br><span class="line">  <span class="variable">$highlight</span>-selection = <span class="number">#717CB4</span>50</span><br><span class="line">  <span class="variable">$highlight</span>-foreground = <span class="number">#8F93A2</span></span><br><span class="line">  <span class="variable">$highlight</span>-comment = rgba(<span class="number">101</span>, <span class="number">115</span>, <span class="number">126</span>, .<span class="number">8</span>)</span><br><span class="line">  <span class="variable">$highlight</span>-red = <span class="number">#FF5370</span></span><br><span class="line">  <span class="variable">$highlight</span>-orange = <span class="number">#F78C6C</span></span><br><span class="line">  <span class="variable">$highlight</span>-yellow = <span class="number">#FFCB6B</span></span><br><span class="line">  <span class="variable">$highlight</span>-green = <span class="number">#C3E88D</span></span><br><span class="line">  <span class="variable">$highlight</span>-aqua = <span class="number">#89DDFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-blue = <span class="number">#82AAFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-purple = <span class="number">#C792EA</span></span><br><span class="line">  <span class="variable">$highlight</span>-deletion = <span class="number">#BF42BF</span></span><br><span class="line">  <span class="variable">$highlight</span>-addition = <span class="number">#105EDE</span></span><br><span class="line">  <span class="variable">$highlight</span>-gutter = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .5),</span><br><span class="line">    bg-<span class="attribute">color</span>: <span class="variable">$highlight</span>-background</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-tools = &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$highlight</span>-foreground,</span><br><span class="line">    bg-<span class="attribute">color</span>: darken(<span class="variable">$highlight</span>-background, <span class="number">2</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-scrollbar = darken(<span class="variable">$highlight</span>-<span class="attribute">background</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">if $highlight_theme == &#x27;light&#x27; || ($highlight_theme == &#x27;mac light&#x27;)</span><br><span class="line">  <span class="variable">$highlight</span>-wrap = <span class="number">#e6ebf1</span></span><br><span class="line">  <span class="variable">$highlight</span>-<span class="attribute">background</span> = <span class="number">#F6F8FA</span></span><br><span class="line">  <span class="variable">$highlight</span>-current-line = <span class="number">#00346e</span></span><br><span class="line">  <span class="variable">$highlight</span>-selection = <span class="number">#80CBC4</span>40</span><br><span class="line">  <span class="variable">$highlight</span>-foreground = <span class="number">#90A4AE</span></span><br><span class="line">  <span class="variable">$highlight</span>-comment = rgba(<span class="number">149</span>, <span class="number">165</span>, <span class="number">166</span>, .<span class="number">8</span>)</span><br><span class="line">  <span class="variable">$highlight</span>-red = <span class="number">#E53935</span></span><br><span class="line">  <span class="variable">$highlight</span>-orange = <span class="number">#F76D47</span></span><br><span class="line">  <span class="variable">$highlight</span>-yellow = <span class="number">#FFB62C</span></span><br><span class="line">  <span class="variable">$highlight</span>-green = <span class="number">#91B859</span></span><br><span class="line">  <span class="variable">$highlight</span>-aqua = <span class="number">#39ADB5</span></span><br><span class="line">  <span class="variable">$highlight</span>-blue = <span class="number">#6182B8</span></span><br><span class="line">  <span class="variable">$highlight</span>-purple = <span class="number">#7C4DFF</span></span><br><span class="line">  <span class="variable">$highlight</span>-deletion = <span class="number">#BF42BF</span></span><br><span class="line">  <span class="variable">$highlight</span>-addition = <span class="number">#105EDE</span></span><br><span class="line">  $highlight-mac-border = rgba(144, 164, 174, .4)</span><br><span class="line">  <span class="variable">$highlight</span>-gutter = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .5),</span><br><span class="line">    bg-<span class="attribute">color</span>: <span class="variable">$highlight</span>-background</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-tools = &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$highlight</span>-foreground,</span><br><span class="line">    bg-<span class="attribute">color</span>: darken(<span class="variable">$highlight</span>-background, <span class="number">5</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-scrollbar = darken(<span class="variable">$highlight</span>-<span class="attribute">background</span>, <span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="variable">$highlight_theme</span> == false</span><br><span class="line">  <span class="variable">$highlight</span>-wrap = <span class="number">#e6ebf1</span></span><br><span class="line">  <span class="variable">$highlight</span>-<span class="attribute">background</span> = <span class="number">#F6F8FA</span></span><br><span class="line">  <span class="variable">$highlight</span>-foreground = <span class="number">#90A4AE</span></span><br><span class="line">  <span class="variable">$highlight</span>-selection = <span class="number">#80CBC4</span>40</span><br><span class="line">  <span class="variable">$highlight</span>-gutter = &#123;</span><br><span class="line">    color: alpha($highlight-foreground, .5),</span><br><span class="line">    bg-<span class="attribute">color</span>: <span class="variable">$highlight</span>-background</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable">$highlight</span>-tools = &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$highlight</span>-foreground,</span><br><span class="line">    bg-<span class="attribute">color</span>: darken(<span class="variable">$highlight</span>-background, <span class="number">5</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>找到主题关于代码块样式相应的文件<br>比如这里我已经把Yilia主题的<code>scss</code>css预处理封装成<code>styles</code>css预处理器了，而且命名为<code>main.styl</code><br>在<code>main.styl</code>里顶部引用(添加)<code>@require &#39;_highlight/theme&#39;</code></p>
+</li>
+<li><p>然后找到主题下主体<code>styl</code>引用文件，我这里改的Yilia主题把他命名为<code>index.styl</code><br>引用刚才上面新建的三个<code>styl</code>文件</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Styl"><figure class="iseeu highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@import <span class="string">&#x27;_highlight/codeFrame&#x27;</span></span><br><span class="line">@import <span class="string">&#x27;_highlight/theme&#x27;</span></span><br><span class="line">@import <span class="string">&#x27;_highlight/diff&#x27;</span></span><br></pre></td></tr></table></figure></div>
+<p>一般都长这样，有很多<code>@import</code><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-add-CodeBlock/4.png" alt="images"></p>
+</li>
+<li><p>在主题配置文件里添加</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 代码块样式</span></span><br><span class="line"><span class="attr">highlight_theme:</span> <span class="string">mac</span> <span class="comment"># default / darker / pale night / light / ocean / mac / mac light / false</span></span><br></pre></td></tr></table></figure></div></li>
+<li><p>配置好后第一次一定要执行<code>hexo clean</code>不然不生效<br>如果出现代码块与代码框不匹配的可以自己修改相应的css样式，由于各个主题样式都不同，这里我就不演示了(f12是个好东西)</p>
+</li>
+</ol>
+<p>你会发现第一行代码呗挡住了，这是我添加修改的</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-entry</span> <span class="selector-tag">pre</span>, <span class="selector-class">.article-entry</span> <span class="selector-class">.highlight</span>&#123;</span><br><span class="line">      <span class="attribute">margin-top</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="前后对比"><a href="#前后对比" class="headerlink" title="前后对比"></a>前后对比</h2><p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-add-CodeBlock/1.png" alt="images"><br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Hexo-add-CodeBlock/3.png" alt="images"></p>
+
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/Hexo-add-CodeBlock.html" one-link-mark="yes">http://mengd.lete114.top/article/Hexo-add-CodeBlock.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/教程/"><span>教程</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Hexo/"><span>Hexo</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/IDEA-Maven-Config.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                IDEA如何配置默认Maven仓库
+            </a>
+            
+            
+            
+            <a href="/article/Vercel-Erroe.html" class="page-next">
+                Vercel(ZEIT) Application Error出现部署问题
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>

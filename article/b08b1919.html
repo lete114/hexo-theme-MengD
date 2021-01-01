@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>Lete乐特&#39;s Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div id="mask"></div>
+    <div id="body-wrap">
+        <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    <div id="mobileNav">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+            <hr>
+        </div>
+        <ul>
+        
+            <li><a href="/">首页</a></li>
+        
+            <li><a href="/tags">标签</a></li>
+        
+            <li><a href="/about">关于我</a></li>
+        
+        </ul>
+    </div>
+    <ul>
+    
+        <li><a href="/">首页</a></li>
+    
+        <li><a href="/tags">标签</a></li>
+    
+        <li><a href="/about">关于我</a></li>
+    
+    </ul>
+</nav>
+        <header>
+    <div class="card-content">
+        <div class="author-info">
+            <div>
+                <img src="https://www.lete114.top/img/avatar.png" alt="Lete乐特" class="avatar">
+                <div class="author">Lete乐特</div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <p>人生只有一次，大胆的生活！！</p>
+            <div class="social-icon">
+                
+                    <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
+                
+                    <a href="mailto:lete@lete114.top"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        <main class="content">
+            
+    
+        <article class="post">
+            <div class="post-title">
+              <h2 class="title">Vercel(zeit)自定义404.html页面</h2>
+            </div>
+             
+             <div class="post-meta">
+                <div class="meta-firstline">
+                    <span class="post-meta-date">
+                        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">发表于 2020-05-22 | </span>
+                        
+                        <i class="fas fa-history fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">更新于 2021-01-01</span>
+                    </span>
+                </div>
+                <div class="meta-secondline"> 
+                    <span class="post-meta-wordcount">
+                        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">字数总计:</span>
+                        <span class="word-count">647 | </span>
+                        <i class="far fa-clock fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读时长:</span>
+                        <span>2分钟 | </span>
+                        <i class="far fa-eye fa-fw post-meta-icon"></i>
+                        <span class="post-meta-label">阅读量:</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </div>
+            </div>
+             
+            <div class="post-content">
+                <br>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我于2020年开始接触、使用<code>Vercel(ZEIT)</code>的，要是我能早点知道的话，我也不会煞费苦心去优化Github上的个人博客的加载速度问题，当然国内也有类似Github的代码托管网站，如Gitee(码云)，Coding(被腾讯收购，还是挺好用的)</p>
+<p>记录一下自己使用<code>Vercel(ZEIT)</code>的过程中遇到的一些问题</p>
+<p>因网上根本搜不到有关<code>Vercel(ZEIT)</code>使用过程中遇到的问题，百度搜不到任何信息就算了，谷歌也是少得可怜</p>
+<p>因此记录此片文章，生怕哪天自己给忘了，又得花时间琢磨</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN@3.0/BoBoPic/07.jpg"></p>
+<a id="more"></a>
+
+<h3 id="Vercel-ZEIT-简介-官网"><a href="#Vercel-ZEIT-简介-官网" class="headerlink" title="Vercel(ZEIT)简介 官网"></a>Vercel(ZEIT)简介 <a target="_blank" rel="noopener" href="https://vercel.com/">官网</a></h3><p>ZEIT(Vercel) 是一家云部署服务的公司，支持静态托管以及 Serverless 服务。</p>
+<p>ZEIT 于 <code>2020年4月21日</code> 将 ZEIT 更名为 <code>Vercel</code> 服务不变</p>
+<p><strong>免费服务</strong></p>
+<blockquote>
+<ol>
+<li>免费额度有 20 GB，够用</li>
+<li>提供 Serverless 服务</li>
+<li>免费自定义域名，支持 HTTPS</li>
+<li>不限站点与 Serverless API 数量</li>
+<li>Serverless 支持 Node.js, Go, Python, Ruby</li>
+<li>提供 Google Cloud 与 AWS 节点，有香港与台湾节点</li>
+<li>支持 now&#46;sh CLI，GitHub，GitLab，Bitbucket 导入/部署</li>
+</ol>
+</blockquote>
+<p>大陆访问 <code>Vercel</code> 是最快的！比 <code>Github Pages</code>，注意线路问题，电信走香港、台湾线路，联通移动会绕美国。</p>
+<h3 id="自定义404页面"><a href="#自定义404页面" class="headerlink" title="自定义404页面"></a>自定义404页面</h3><p>个人感觉Vercel自带的404属实是有点丑，对用户来说Vercel自带的404页面没有可用信息内容，甚至返回主页都没有。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sundry/Coding-404.png"></p>
+<p>当时我查找内容教程的时候，百度一点有关Vercel的内容都没有，谷歌相关内容很少也就十几个页面内容左右，很遗憾没有关于自定义404页面的相关信息。</p>
+<p>最后我只能在官网查文档，查到后也是一脸懵逼<img src="https://cdn.jsdelivr.net/gh/drew233/cdn/20200409103906.webp">英文就算了，这谷歌翻译还正确，随后我在有道翻译得出个大概意思(其实就是文档写的太过于专业了)，我用的是<code>Hexo+yilia</code>主题，但Hexo主题多种多样，各个主题文件存放层次还不一样，自己琢磨了1个多小时得出结论：</p>
+<p>在<code>Hexo</code>项目下单<code>public</code>文件夹下创建<code>vercel.json</code>文件，内容如下</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">&quot;routes&quot;</span>: [</span><br><span class="line">    &#123; <span class="attr">&quot;handle&quot;</span>: <span class="string">&quot;filesystem&quot;</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">&quot;src&quot;</span>: <span class="string">&quot;/(.*)&quot;</span>, <span class="attr">&quot;status&quot;</span>: <span class="number">404</span>, <span class="attr">&quot;dest&quot;</span>: <span class="string">&quot;/404.html&quot;</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>参考官方文档：<a target="_blank" rel="noopener" href="https://vercel.com/docs/configuration#routes/advanced/custom-404">https://vercel.com/docs/configuration#routes/advanced/custom-404</a></strong></p>
+<p>最后在<code>public</code>文件夹下丢个<code>404.html</code>页面</p>
+<p>重新<code>Hexo g</code> 与 <code>Hexo d</code>部署即可</p>
+<h5 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h5><p><strong><a target="_blank" rel="noopener" href="https://lete114.now.sh/%E9%94%99%E8%AF%AF%E7%BD%91%E5%9D%80">404</a></strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/CDN/Sundry/404.png"></p>
+<h3 id="【Lete乐特个人博客】：https-lete114-now-sh"><a href="#【Lete乐特个人博客】：https-lete114-now-sh" class="headerlink" title="【Lete乐特个人博客】：https://lete114.now.sh"></a>【Lete乐特个人博客】：<a target="_blank" rel="noopener" href="https://lete114.now.sh/">https://lete114.now.sh</a></h3>
+            </div>
+            
+            <!--版权-->
+
+    
+    <div class="post-copyright">
+      <div class="post-copyright-icon"><a></a></div>
+        <div class="post-copyright__author">
+            <span class="post-copyright-meta">文章作者: </span>
+              <span class="post-copyright-info">
+                <a href="mailto:lete@lete114.top" one-link-mark="yes">Lete乐特</a>
+              </span>
+        </div>
+        <div class="post-copyright__type">
+            <span class="post-copyright-meta">文章链接: </span>
+              <span class="post-copyright-info">
+                <a href="http://mengd.lete114.top/article/b08b1919.html" one-link-mark="yes">http://mengd.lete114.top/article/b08b1919.html</a>
+              </span>
+        </div><div class="post-copyright__notice">
+            <span class="post-copyright-meta">版权声明: </span>
+              <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
+                    CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                ！</span>
+        </div>
+    </div>
+    
+
+
+            <div class="post-tag">
+                <span>
+                    <i class="fa fa-tag"></i>
+                     
+                    <a href="tags/记录/"><span>记录</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/404/"><span>404</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Zeit/"><span>Zeit</span></a>
+                        
+                            <i class="fas fa-angle-right"></i>
+                        
+                     
+                    <a href="tags/Vercel/"><span>Vercel</span></a>
+                        
+                    
+                </span>
+            </div>
+
+            <script src="/js/share.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
+<div class="social-share"></div>
+<script>
+var $config = {
+    sites   : ['facebook', 'qq', 'weibo','wechat', 'twitter'], // 启用的站点
+    // disabled: ['google', 'facebook', 'twitter', 'linyin'], // 禁用的站点
+    wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper: '立即下载发送专属二维码,邀请朋友加入',
+};
+
+socialShare('.social-share', $config);
+</script>
+
+            <style>
+@keyframes donate_effcet {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.reward-all:after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 13px solid #f5f5f5;
+    border-right: 13px solid transparent;
+    border-left: 13px solid transparent;
+    content: '';
+}
+
+</style>
+
+<div class="post-reward">
+    <div class="reward-button">
+         赏
+         <div class="reward-main">
+            <ul class="reward-all">
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png" alt="微信"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/wzf.png"></a>
+                    <div class="post-qr-code-desc">微信</div>
+                </li>
+                <li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"
+                        target="_blank"><img class="post-qr-code-img entered loaded"
+                            data-lazy-src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png" alt="支付宝"
+                            data-ll-status="loaded" src="https://cdn.jsdelivr.net/gh/lete114/CDN@2.0/Use/zfb.png"></a>
+                    <div class="post-qr-code-desc">支付宝</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        </article>
+        <div class="pagination">
+            
+            <a href="/article/addee0b6.html" class="page-pre">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+                Hexo+yilia安装Valine评论系统、LeanCloud、创建应用、部署云引擎
+            </a>
+            
+            
+            
+            <a href="/article/a5ef8356.html" class="page-next">
+                CSS修改滚动条颜色样式(右边滚动条、底部滚动条、div内滚动条)
+                <i class="fas fa-arrow-alt-circle-right"></i>
+            </a>
+            
+        </div>
+    
+
+
+
+        </main>
+    </div>
+    <footer class="footer" id="footer">
+    <div class="copyright">
+        
+      &copy; 2020 - 2021
+        <i class="fas fa-fan"></i>
+        Lete乐特
+    </div>
+    <div class="framework-info">
+        <span>框架 </span>
+        <a href="https://hexo.io" target="_blank">Hexo</a>
+        <span class="footer-separator">|</span>
+        <span>主题 </span>
+        <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+    </div>
+    <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
+</footer>   
+    
+<script src="/js/main.js"></script>
+   
+</body>
+</html>
