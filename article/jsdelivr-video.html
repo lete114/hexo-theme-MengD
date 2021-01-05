@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="zh-CN">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<title>Lete乐特&#39;s Blog</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<title>利用jsdelivr搭建视频床 | Hexo-Theme-MengD(萌典)</title>
+<link rel="icon" href="/img/favicon.ico">
+<meta name="keywords" content="asda">
+<meta name="description" content="人生只有一次，大胆的生活！！" />
+<meta property="site_name" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mengd.lete114.top">
+<meta property="og:title" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:site_name" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:description" content="人生只有一次，大胆的生活！！" />
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo-Theme-MengD(萌典)">
+<meta name="twitter:description" content="人生只有一次，大胆的生活！！">
+<link rel="dns-prefetch" href="https://mengd.lete114.top">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="/css/index.css">
 
+
+     
+    
+   
 <meta name="generator" content="Hexo 5.3.0"></head>
-<body>
+<body id="body">
     <div id="mask"></div>
-    <div id="body-wrap">
-        <nav class="site_nav" id="site_nav">
-    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    
+<script type="text/javascript">$.getScript('/js/search.js',function(){searchFunc('/search.xml', 'local-search-input', 'local-search-result') })</script>
+<div class="search-dialog" id="local-search">
+    <div id="local-search-title">本地搜索</div>
+    <input id="local-search-input" placeholder="搜索文章" type="text" >
+    <hr>
+    <div id="local-search-result">
+        <div id="local-hits"></div>
+    </div>
+    <span class="search-close-button"><i class="fas fa-times"></i></span>
+</div>
+
+    
+
+  
+    <div style="display: flex;">
+        <div id="body-wrap">
+            <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars"></i>
+    
+    <i class="fas fa-search search-btn"></i>
+    
     <div id="mobileNav">
         <div class="author-info">
             <div>
@@ -30,6 +69,10 @@
         
             <li><a href="/tags">标签</a></li>
         
+            <li><a href="/categories">分类</a></li>
+        
+            <li><a href="/archives">归档</a></li>
+        
             <li><a href="/about">关于我</a></li>
         
         </ul>
@@ -40,11 +83,15 @@
     
         <li><a href="/tags">标签</a></li>
     
+        <li><a href="/categories">分类</a></li>
+    
+        <li><a href="/archives">归档</a></li>
+    
         <li><a href="/about">关于我</a></li>
     
     </ul>
 </nav>
-        <header>
+            <header>
     <div class="card-content">
         <div class="author-info">
             <div>
@@ -64,12 +111,13 @@
         </div>
     </div>
 </header>
-        <main class="content">
-            
+            <main class="content">
+                
     
         <article class="post">
+            <link rel="stylesheet" href="/css/article.css">
             <div class="post-title">
-              <h2 class="title">利用Jsdeliver搭建视频床</h2>
+              <h2 class="title">利用jsdelivr搭建视频床</h2>
             </div>
              
              <div class="post-meta">
@@ -79,7 +127,7 @@
                         <span class="post-meta-label">发表于 2020-11-22 | </span>
                         
                         <i class="fas fa-history fa-fw post-meta-icon"></i>
-                        <span class="post-meta-label">更新于 2021-01-01</span>
+                        <span class="post-meta-label">更新于 2021-01-05</span>
                     </span>
                 </div>
                 <div class="meta-secondline"> 
@@ -91,20 +139,22 @@
                         <span class="post-meta-label">阅读时长:</span>
                         <span>5分钟 | </span>
                         <i class="far fa-eye fa-fw post-meta-icon"></i>
-                        <span class="post-meta-label">阅读量:</span>
-                        <span id="busuanzi_value_page_pv"></span>
+                        <span id="/article/jsdelivr-video.html" class="leancloud_visitors">
+                            <span class="post-meta-label">阅读量:</span>
+                            <span class="leancloud-visitors-count" id="twikoo_visitors">0</span>
                         </span>
-                    </div>
+                    </span>
+                </div>
             </div>
              
             <div class="post-content">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>相信很多人都用过图床，大部分都是利用Jsdeliver当图床，从而得到一个免费的图床，并且自带CDN加速<br>但是有很多人想存储视频这么办呢？有没有视频床呢？把视频上传仓库后，Jsdeliver是能抓取的，而且也能用<br>不过只能存储20MB以内的资源，并且Jsdeliver不能解析视频类资源，打开视频格式的链接会自动下载，无法播放<br>那怎么办呢？只要你想就没有你做不到的，那么就在此记录一下过程，就不多说废话了，看正文 &lt;(￣︶￣)↗[GO!]</p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>首先你得了解Jsdeliver，他只加载20MB以内的资源，如果你的视频正好控制这一范围的话，你就可以使用默认的内容了<br>但是由于Jsdeliver对视频资源的解析不友好，所以我们就得对视频资源做一定的处理</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>相信很多人都用过图床，大部分都是利用jsdelivr当图床，从而得到一个免费的图床，并且自带CDN加速<br>但是有很多人想存储视频这么办呢？有没有视频床呢？把视频上传仓库后，jsdelivr是能抓取的，而且也能用<br>不过只能存储20MB以内的资源，并且jsdelivr不能解析视频类资源，打开视频格式的链接会自动下载，无法播放<br>那怎么办呢？只要你想就没有你做不到的，那么就在此记录一下过程，就不多说废话了，看正文 &lt;(￣︶￣)↗[GO!]</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>首先你得了解jsdelivr，他只加载20MB以内的资源，如果你的视频正好控制这一范围的话，你就可以使用默认的内容了<br>但是由于jsdelivr对视频资源的解析不友好，所以我们就得对视频资源做一定的处理</p>
 <p>用过QQ浏览器的都知道下载网页上的视频下来都是M3U8的视频格式，即使你不下载，只是看视频都会产生M3U8文件和TS文件</p>
 <h2 id="什么是M3U8、TS文件？"><a href="#什么是M3U8、TS文件？" class="headerlink" title="什么是M3U8、TS文件？"></a>什么是M3U8、TS文件？</h2><p><strong>M3U8</strong><br>M3U8是指UTF-8编码格式的M3U文件(M3U使用Latin-1字符集编码)<br>M3U文件是一个记录索引的纯文本文件，打开它时播放软件并不会播放它<br>而是根据它的索引找到对应的音视频文件的网络地址进行在线播放</p>
 <p><strong>TS</strong><br>ts是日本高清摄像机拍摄下进行的封装格式，全称为MPEG2-TS。ts即”Transport Stream”的缩写。<br>将一个视频文件(MP4)切片分为很多个TS文件，一个TS文件的视频时常可以自定义，比如切片为5秒<br>那么其他ts文件也是5秒，但是这个不是完全准确，也就是说会有误差，会产生4-7秒左右的ts视频文件</p>
 <p>那他是这么工作的呢？(以下图片是本地运行过程)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Jsdeliver-Video/m3u8-ts.png" alt="m3u8-ts"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/jsdelivr-Video/m3u8-ts.png" alt="m3u8-ts"></p>
 <h2 id="ffmpeg-工具"><a href="#ffmpeg-工具" class="headerlink" title="ffmpeg 工具"></a>ffmpeg 工具</h2><p>什么是ffmpeg在这里我就不再赘述了，感兴趣的可以自行搜索</p>
 <p>了解了M3U8和TS，我该怎么把视频切片呢?<br>使用ffmpeg 工具进行切片</p>
 <p>官网：<a target="_blank" rel="noopener" href="https://ffmpeg.org/download.html">https://ffmpeg.org/download.html</a></p>
@@ -112,14 +162,14 @@
 <h2 id="视频切片"><a href="#视频切片" class="headerlink" title="视频切片"></a>视频切片</h2><blockquote>
 <p>当前目录下有<br>Lete.mp4<br>ffmpeg.exe</p>
 </blockquote>
-<p>打开cmd，cd进入到刚刚新建的文件夹，关于怎么操作我就不多bb了<br>既然都用上Github，用Jsdeliver加速了，你电脑里一定装了Git工具<br>在当前目录打开<code> Git Bash</code> 命令行</p>
+<p>打开cmd，cd进入到刚刚新建的文件夹，关于怎么操作我就不多bb了<br>既然都用上Github，用jsdelivr加速了，你电脑里一定装了Git工具<br>在当前目录打开<code> Git Bash</code> 命令行</p>
 <p>(cmd不需要<code>./</code>)</p>
 <ol>
 <li>将mp4转成ts格式，1对1，转换后视频质量与大小无变化。(执行下方代码得到<code>Lete.ts</code>)<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ffmpeg.exe -y -i Lete.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb Lete.ts</span><br></pre></td></tr></table></figure></div></li>
 <li>按时间隔分片，1对N，下面的5即<code>每个分片5秒</code>，自行修改<br><code>-segment_list Lete.m3u8</code>为切片后得到的m3u8文件<br><code>-segment_time 5 Lete%03d.ts</code>为切片后得到的ts文件名<code>5</code>代表每个ts文件5秒播放时常(有误差，不完全5秒)<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./ffmpeg -i Lete.ts -c copy -map 0 -f segment -segment_list Lete.m3u8 -segment_time 5 Lete%03d.ts</span><br></pre></td></tr></table></figure></div>
-这是你的文件了会有如下图文件<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Jsdeliver-Video/1.png"></li>
+这是你的文件了会有如下图文件<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/jsdelivr-Video/1.png"></li>
 </ol>
-<p>将这几个文件push到仓库即可<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Jsdeliver-Video/2.png"></p>
+<p>将这几个文件push到仓库即可<br><img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/jsdelivr-Video/2.png"></p>
 <p>现在访问是m3u8是不可以播放视频的(会自动下载对吧)<br><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lete114/CDN2/video/4.m3u8">https://cdn.jsdelivr.net/gh/lete114/CDN2/video/4.m3u8</a><br>访问文件也是不行的(乱码对吧)<br><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/lete114/CDN2/video/4000.ts">https://cdn.jsdelivr.net/gh/lete114/CDN2/video/4000.ts</a></p>
 <h2 id="HLS技术"><a href="#HLS技术" class="headerlink" title="HLS技术"></a>HLS技术</h2><p>什么是HLS技术？</p>
 <p>HLS (HTTP Live Streaming)是Apple的动态码率自适应技术。主要用于PC和Apple终端的音视频服务。<br>包括一个m3u(8)的索引文件，TS媒体分片文件和key加密串文件。(摘抄自百度百科)</p>
@@ -213,20 +263,21 @@
         <div class="post-copyright__type">
             <span class="post-copyright-meta">文章链接: </span>
               <span class="post-copyright-info">
-                <a href="http://mengd.lete114.top/article/Jsdeliver-video.html" one-link-mark="yes">http://mengd.lete114.top/article/Jsdeliver-video.html</a>
+                <a href="https://mengd.lete114.top/article/jsdelivr-video.html" one-link-mark="yes">https://mengd.lete114.top/article/jsdelivr-video.html</a>
               </span>
         </div><div class="post-copyright__notice">
             <span class="post-copyright-meta">版权声明: </span>
               <span class="post-copyright-info">本博客所有文章除特别声明外，均采用
                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" one-link-mark="yes">
                     CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自
-                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Lete乐特's Blog</a>
+                <a href="https://blog.lete114.top" target="_blank" one-link-mark="yes">Hexo-Theme-MengD(萌典)</a>
                 ！</span>
         </div>
     </div>
     
 
-
+            
+            
             <div class="post-tag">
                 <span>
                     <i class="fa fa-tag"></i>
@@ -236,18 +287,20 @@
                             <i class="fas fa-angle-right"></i>
                         
                      
-                    <a href="tags/Jsdeliver/"><span>Jsdeliver</span></a>
+                    <a href="tags/记录/"><span>记录</span></a>
                         
                             <i class="fas fa-angle-right"></i>
                         
                      
-                    <a href="tags/记录/"><span>记录</span></a>
+                    <a href="tags/jsdelivr/"><span>jsdelivr</span></a>
                         
                     
                 </span>
             </div>
 
-            <script src="/js/share.min.js"></script>
+            
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">    
 <div class="social-share"></div>
 <script>
@@ -261,47 +314,7 @@ var $config = {
 socialShare('.social-share', $config);
 </script>
 
-            <style>
-@keyframes donate_effcet {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    -webkit-transform: translateY(-20px);
-    -moz-transform: translateY(-20px);
-    -o-transform: translateY(-20px);
-    -ms-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-.reward-all:after {
-    position: absolute;
-    right: 0;
-    bottom: 2px;
-    left: 0;
-    margin: 0 auto;
-    width: 0;
-    height: 0;
-    border-top: 13px solid #f5f5f5;
-    border-right: 13px solid transparent;
-    border-left: 13px solid transparent;
-    content: '';
-}
-
-</style>
-
-<div class="post-reward">
+            <div class="post-reward">
     <div class="reward-button">
          赏
          <div class="reward-main">
@@ -324,6 +337,35 @@ socialShare('.social-share', $config);
 </div>
             
         </article>
+        <script>
+            var tocTitle =`
+            <div id="toc-title">
+                <h4>目录
+                    <span id="num">0%</span>
+                </h4>
+                <progress id="progress" value="0" max="100"></progress>
+            </div>
+            `;
+
+            
+
+            $("#body-wrap").after('<div id="toc">'+tocTitle+'<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFM3U8%E3%80%81TS%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="toc-text">什么是M3U8、TS文件？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ffmpeg-%E5%B7%A5%E5%85%B7"><span class="toc-text">ffmpeg 工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E5%88%87%E7%89%87"><span class="toc-text">视频切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HLS%E6%8A%80%E6%9C%AF"><span class="toc-text">HLS技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE"><span class="toc-text">视频播放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-text">效果</span></a></li></ol></li></ol></div>');
+        </script>
+
+        <section id="rightside">
+            <div id="rightside-item">
+                <a class="rightside-toc" title="目录">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                <a href="#直达评论" title="直达评论">
+                    <i class="fas fa-comments"></i>
+                </a>
+                <a href="#body" title="回到顶部">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </section>
+
         <div class="pagination">
             
             <a href="/article/hexo-seo-autopush.html" class="page-pre">
@@ -339,12 +381,53 @@ socialShare('.social-share', $config);
             </a>
             
         </div>
+
+        
+        <hr>
+            <div class="comment-head" id="直达评论">
+                <div class="comment-headline">
+                    <i class="fas fa-comments fa-fw"></i>
+                    <span> 评论</span>
+                </div>
+                
+                    
+<div id="wcomments"></div>
+<script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
+
+<script>
+    let initData = {
+        el: '#wcomments',
+        path: location.pathname,
+        serverURL: 'https://waline.lete114.top',
+        placeholder: '快来评论吧!!',
+        avatar: '',
+        meta: 'nick,mail,link'.split(","),
+        requiredFields: 'nick,mail,link'.split(","),
+        pageSize: 5,
+        lang: 'zh-CN',
+        emojiCDN: '',
+        emojiMaps: null,
+        visitor: true
+    }
+    var option = false;
+    if(option){
+        initData = Object.assign(initData, option)
+    }
+    new Waline(initData)
+</script>
+                
+            </div>
+        
+
     
 
 
 
-        </main>
+            </main>
+        </div>
     </div>
+    <img id="up" src="https://cdn.jsdelivr.net/gh/lete114/CDN/Use/up.gif" alt="回到顶部">
+    
     <footer class="footer" id="footer">
     <div class="copyright">
         
@@ -361,8 +444,9 @@ socialShare('.social-share', $config);
     </div>
     <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
 </footer>   
+    <script src="/js/main.js"></script>
+ 
     
-<script src="/js/main.js"></script>
    
 </body>
 </html>

@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="zh-CN">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<title>Lete乐特&#39;s Blog</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<title>Hexo-Theme-MengD(萌典)</title>
+<link rel="icon" href="/img/favicon.ico">
+<meta name="keywords" content="asda">
+<meta name="description" content="人生只有一次，大胆的生活！！" />
+<meta property="site_name" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mengd.lete114.top">
+<meta property="og:title" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:site_name" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:description" content="人生只有一次，大胆的生活！！" />
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo-Theme-MengD(萌典)">
+<meta name="twitter:description" content="人生只有一次，大胆的生活！！">
+<link rel="dns-prefetch" href="https://mengd.lete114.top">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="/css/index.css">
 
+
+     
+    
+   
 <meta name="generator" content="Hexo 5.3.0"></head>
-<body>
+<body id="body">
     <div id="mask"></div>
-    <div id="body-wrap">
-        <nav class="site_nav" id="site_nav">
-    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    
+<script type="text/javascript">$.getScript('/js/search.js',function(){searchFunc('/search.xml', 'local-search-input', 'local-search-result') })</script>
+<div class="search-dialog" id="local-search">
+    <div id="local-search-title">本地搜索</div>
+    <input id="local-search-input" placeholder="搜索文章" type="text" >
+    <hr>
+    <div id="local-search-result">
+        <div id="local-hits"></div>
+    </div>
+    <span class="search-close-button"><i class="fas fa-times"></i></span>
+</div>
+
+    
+
+  
+    <div style="display: flex;">
+        <div id="body-wrap">
+            <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars"></i>
+    
+    <i class="fas fa-search search-btn"></i>
+    
     <div id="mobileNav">
         <div class="author-info">
             <div>
@@ -30,6 +69,10 @@
         
             <li><a href="/tags">标签</a></li>
         
+            <li><a href="/categories">分类</a></li>
+        
+            <li><a href="/archives">归档</a></li>
+        
             <li><a href="/about">关于我</a></li>
         
         </ul>
@@ -40,11 +83,15 @@
     
         <li><a href="/tags">标签</a></li>
     
+        <li><a href="/categories">分类</a></li>
+    
+        <li><a href="/archives">归档</a></li>
+    
         <li><a href="/about">关于我</a></li>
     
     </ul>
 </nav>
-        <header>
+            <header>
     <div class="card-content">
         <div class="author-info">
             <div>
@@ -64,12 +111,148 @@
         </div>
     </div>
 </header>
-        <main class="content">
-            <div class="tag-content">
-    <a href="/tags/Butterfly/" style="font-size: 1.4em; color: rgb(47, 52, 97)">Butterfly</a><a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 1.5em; color: rgb(42, 75, 2)">优化</a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 2.1em; color: rgb(97, 164, 71)">教程</a><a href="/tags/%E6%BA%90%E7%A0%81/" style="font-size: 1.5em; color: rgb(180, 71, 177)">源码</a><a href="/tags/C/" style="font-size: 1.3em; color: rgb(132, 186, 72)">C#</a><a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 1.3em; color: rgb(173, 174, 37)">编程</a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 1.5em; color: rgb(177, 99, 47)">软件</a><a href="/tags/css/" style="font-size: 1.2em; color: rgb(75, 39, 7)">css</a><a href="/tags/web/" style="font-size: 1.2em; color: rgb(8, 187, 186)">web</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.2em; color: rgb(13, 95, 1)">前端</a><a href="/tags/Github/" style="font-size: 1.4em; color: rgb(147, 73, 137)">Github</a><a href="/tags/Gitee/" style="font-size: 1.3em; color: rgb(136, 103, 129)">Gitee</a><a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 1.3em; color: rgb(69, 132, 180)">安装</a><a href="/tags/Git/" style="font-size: 1.3em; color: rgb(119, 24, 26)">Git</a><a href="/tags/CDN/" style="font-size: 1.2em; color: rgb(79, 154, 99)">CDN</a><a href="/tags/Jsdeliver/" style="font-size: 1.3em; color: rgb(19, 83, 129)">Jsdeliver</a><a href="/tags/SEO/" style="font-size: 1.4em; color: rgb(27, 16, 172)">SEO</a><a href="/tags/Hexo/" style="font-size: 2em; color: rgb(82, 137, 59)">Hexo</a><a href="/tags/Yilia/" style="font-size: 1.8em; color: rgb(151, 46, 179)">Yilia</a><a href="/tags/Valine/" style="font-size: 1.4em; color: rgb(96, 185, 58)">Valine</a><a href="/tags/Live2d/" style="font-size: 1.3em; color: rgb(28, 149, 135)">Live2d</a><a href="/tags/Config/" style="font-size: 1.6em; color: rgb(36, 120, 87)">Config</a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.3em; color: rgb(105, 91, 27)">博客</a><a href="/tags/Blog/" style="font-size: 1.3em; color: rgb(34, 181, 99)">Blog</a><a href="/tags/IDEA/" style="font-size: 1.3em; color: rgb(176, 101, 182)">IDEA</a><a href="/tags/Maven/" style="font-size: 1.4em; color: rgb(6, 190, 163)">Maven</a><a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 1.4em; color: rgb(0, 60, 51)">配置</a><a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 1.9em; color: rgb(117, 19, 174)">记录</a><a href="/tags/Java/" style="font-size: 1.7em; color: rgb(185, 127, 117)">Java</a><a href="/tags/SpringBoot/" style="font-size: 1.6em; color: rgb(101, 142, 151)">SpringBoot</a><a href="/tags/Thymeleaf/" style="font-size: 1.5em; color: rgb(23, 6, 73)">Thymeleaf</a><a href="/tags/JavaScript/" style="font-size: 1.2em; color: rgb(127, 57, 12)">JavaScript</a><a href="/tags/JQuery/" style="font-size: 1.2em; color: rgb(116, 12, 177)">JQuery</a><a href="/tags/LeanCloud/" style="font-size: 1.3em; color: rgb(73, 46, 100)">LeanCloud</a><a href="/tags/MyBatis/" style="font-size: 1.2em; color: rgb(26, 198, 25)">MyBatis</a><a href="/tags/SSM/" style="font-size: 1.2em; color: rgb(177, 168, 38)">SSM</a><a href="/tags/Nodejs/" style="font-size: 1.2em; color: rgb(124, 147, 149)">Nodejs</a><a href="/tags/Gzip/" style="font-size: 1.2em; color: rgb(21, 134, 58)">Gzip</a><a href="/tags/404/" style="font-size: 1.2em; color: rgb(108, 188, 199)">404</a><a href="/tags/Zeit/" style="font-size: 1.2em; color: rgb(113, 184, 74)">Zeit</a><a href="/tags/Vercel/" style="font-size: 1.2em; color: rgb(187, 58, 60)">Vercel</a><a href="/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/" style="font-size: 1.2em; color: rgb(122, 197, 92)">又拍云</a><a href="/tags/%E6%8E%A8%E8%8D%90/" style="font-size: 1.4em; color: rgb(188, 165, 70)">推荐</a><a href="/tags/Google-Chrome/" style="font-size: 1.2em; color: rgb(16, 178, 59)">Google Chrome</a><a href="/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/" style="font-size: 1.2em; color: rgb(114, 88, 51)">谷歌插件</a>
+            <main class="content">
+                
+
+<div id="archive">
+<h3 class="article-count">文章总览 - 54</h3>
+<div class="archive-article-info">
+
+    
+    
+    
+        
+        <h4 class="archive-year">2020</h4>
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-12-02
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/hexo-seo-autopush.html" title="Hexo 每天自动提交网站url到搜索引擎">Hexo 每天自动提交网站url到搜索引擎</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-11-22
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/jsdelivr-video.html" title="利用jsdelivr搭建视频床">利用jsdelivr搭建视频床</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-09-30
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/Hexo-Artalk.html" title="Hexo-添加Artalk评论教程">Hexo-添加Artalk评论教程</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-09-21
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/Hexo-add-CodeBlock.html" title="Hexo-添加代码块边框">Hexo-添加代码块边框</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-09-11
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/Live2d-Config.html" title="Hexo-Live2d安装教程(自定义Live2d)">Hexo-Live2d安装教程(自定义Live2d)</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-08-14
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/upyun-cdn-config.html" title="又拍云CDN配置">又拍云CDN配置</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-08-07
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/Butterfly-config.html" title="Butterfly主题美化-无修改源码 (持续更新中...)">Butterfly主题美化-无修改源码 (持续更新中...)</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-07-18
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/DouYin.html" title="手把手教你，抖音去水印(有手就能学会)">手把手教你，抖音去水印(有手就能学会)</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-07-09
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/Valine-LeanCloud-Config.html" title="LeanCloud-Valine保姆级配置教程">LeanCloud-Valine保姆级配置教程</a>
+        </div>
+
+    
+    
+    
+        <div class="article-item">
+            <time class="post-created-date">
+                <i class="far fa-calendar-alt"></i>
+                 2020-06-24
+            </time>
+            <br>
+            <a class="article-title-item" href="/article/3a86607d.html" title="Hexo-abbrlink博客URL持久化、优化">Hexo-abbrlink博客URL持久化、优化</a>
+        </div>
+
 </div>
-        </main>
+</div>
+
+    <div class="pagination">
+        <span class="page-number current">1</span><a class="page-number" href="/tags/%E6%95%99%E7%A8%8B/page/2/">2</a><a class="page-number" href="/tags/%E6%95%99%E7%A8%8B/page/3/">3</a><a class="extend next" rel="next" href="/tags/%E6%95%99%E7%A8%8B/page/2/"><i class='fas fa-chevron-right fa-fw'></i></a>
     </div>
+
+            </main>
+        </div>
+    </div>
+    <img id="up" src="https://cdn.jsdelivr.net/gh/lete114/CDN/Use/up.gif" alt="回到顶部">
+    
     <footer class="footer" id="footer">
     <div class="copyright">
         
@@ -86,8 +269,9 @@
     </div>
     <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
 </footer>   
+    <script src="/js/main.js"></script>
+ 
     
-<script src="/js/main.js"></script>
    
 </body>
 </html>

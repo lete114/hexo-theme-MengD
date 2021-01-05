@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="zh-CN">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<title>Lete乐特&#39;s Blog</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<title>Hexo-Theme-MengD(萌典)</title>
+<link rel="icon" href="/img/favicon.ico">
+<meta name="keywords" content="asda">
+<meta name="description" content="人生只有一次，大胆的生活！！" />
+<meta property="site_name" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mengd.lete114.top">
+<meta property="og:title" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:site_name" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:description" content="人生只有一次，大胆的生活！！" />
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo-Theme-MengD(萌典)">
+<meta name="twitter:description" content="人生只有一次，大胆的生活！！">
+<link rel="dns-prefetch" href="https://mengd.lete114.top">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="/css/index.css">
 
+
+     
+    
+   
 <meta name="generator" content="Hexo 5.3.0"></head>
-<body>
+<body id="body">
     <div id="mask"></div>
-    <div id="body-wrap">
-        <nav class="site_nav" id="site_nav">
-    <i id="openNav" class="fas fa-bars fa-fw"></i>
+    
+<script type="text/javascript">$.getScript('/js/search.js',function(){searchFunc('/search.xml', 'local-search-input', 'local-search-result') })</script>
+<div class="search-dialog" id="local-search">
+    <div id="local-search-title">本地搜索</div>
+    <input id="local-search-input" placeholder="搜索文章" type="text" >
+    <hr>
+    <div id="local-search-result">
+        <div id="local-hits"></div>
+    </div>
+    <span class="search-close-button"><i class="fas fa-times"></i></span>
+</div>
+
+    
+
+  
+    <div style="display: flex;">
+        <div id="body-wrap">
+            <nav class="site_nav" id="site_nav">
+    <i id="openNav" class="fas fa-bars"></i>
+    
+    <i class="fas fa-search search-btn"></i>
+    
     <div id="mobileNav">
         <div class="author-info">
             <div>
@@ -30,6 +69,10 @@
         
             <li><a href="/tags">标签</a></li>
         
+            <li><a href="/categories">分类</a></li>
+        
+            <li><a href="/archives">归档</a></li>
+        
             <li><a href="/about">关于我</a></li>
         
         </ul>
@@ -40,11 +83,15 @@
     
         <li><a href="/tags">标签</a></li>
     
+        <li><a href="/categories">分类</a></li>
+    
+        <li><a href="/archives">归档</a></li>
+    
         <li><a href="/about">关于我</a></li>
     
     </ul>
 </nav>
-        <header>
+            <header>
     <div class="card-content">
         <div class="author-info">
             <div>
@@ -64,55 +111,61 @@
         </div>
     </div>
 </header>
-        <main class="content">
+            <main class="content">
+                
+	
+        <div class="post-item">
+            <div class="post-title">
+                <h2><a href="/article/c68fd42d.html">QTTabBar 「资源管理器」让你的文件夹拥有浏览器标签页般的体验</a></h2>
+            </div>
+            <div class="post-description">
+                <p style="-webkit-line-clamp: 3">
+                    前言对于广大使用 Windows 系统的同学们来说，「资源管理器」一定是大家再熟悉不过的一位老伙计了，说起名字可能还会有不知道的同学，但我要是说起「文件夹」，大家的脑海里应该立刻就能浮现出熟悉的画面：一个四四方方的小盒子里，放着我们所有的文件：音乐、视频、软件……，几乎任何一个和文件打交道的操作，都一定少不了它。
+但就是这样一个重要的角色，却一直令效率人士诟病不已，因为从 XP 时代到如今的 Win10，微软在资源管理器上始终没有给我们带来令人满意的升级。界面不咸不淡的地改变着风格，功能却仍旧只是简单的分类、排序、重命名和查看属性；为了找一个文件，不得不点进一层又一层嵌套着的子文件夹，如果没有找到，那么就又得先返回，再点进新的文件夹里接着找；如果你要拖拽复制，就需要重新打开一个新的文件夹；如果你打开的文件夹过多，一会儿后，你就只能在满桌面的文件夹中不知所措；如果你不小心关掉了一个正在用的文件夹，还得重新从磁盘的层级开始一级级打开文件夹寻找
+                </p>
+            </div>
             
-	
-        <div class="post-item">
-            <div class="post-title">
-                <h2><a href="/article/20981.html">下载Hexo主题，并做相应的配置和优化</a></h2>
-            </div>
-            <div class="post-description">
-                <p style="-webkit-line-clamp: 3">
-                    下载主题期文章教大家如何搭建Hexo，并部署到Github Pages因为官方给的默认主题太丑了，或不合自己的心意这期就教大家如何下载主题、设置和优化主题下载主题可以去Github上搜索主题，也可以去百度搜索Hexo主题下载，我这里以GitHub为例
+                
+                    <img src="https://cdn.jsdelivr.net/gh/lete114/CDN/BoBoPic/19.jpg" class="cover" alt="封面">
+                
+            
 
-打开GitHub官网首页，搜索主题，这里我以yilia为例
-
-
-                </p>
-            </div>
             <div class="post-footer">
+                <!-- 发布时间 -->
                 <div class="post-meta">
                     <span class="post-date">
                         <i class="far fa-calendar-alt"></i>
                         <span>发表于</span>
-                        <span>2020-04-21</span>
+                        <span>2020-06-08</span>
                     </span>
                 </div>
+                <!-- 标签 -->
                 
-                <div class="post-tag">
-                    <span>
-                        <i class="fa fa-tag"></i>
-                         
-                        <a href="tags/优化/"><span>优化</span></a>
+                    <div class="post-tag">
+                        <span>
+                            <i class="fa fa-tag"></i>
+                             
+                            <span>
+                                <a href="tags/教程/">
+                                    <span>教程</span>
+                                </a>
+                                
+                                    <i class="fas fa-angle-right"></i>
+                                
+                            </span>
+                             
+                            <span>
+                                <a href="tags/推荐/">
+                                    <span>推荐</span>
+                                </a>
+                                
+                            </span>
                             
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/教程/"><span>教程</span></a>
-                            
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/Hexo/"><span>Hexo</span></a>
-                            
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/配置/"><span>配置</span></a>
-                            
-                        
-                    </span>
-                </div>
+                        </span>
+                    </div>
+                
+                <!-- 分类 -->
+                
             </div>
         </div>
 
@@ -122,52 +175,62 @@
 	
         <div class="post-item">
             <div class="post-title">
-                <h2><a href="/article/20862.html">Hexo搭建个人博客,并部署到Github上托管(Windows)</a></h2>
+                <h2><a href="/article/c2971fd9.html">Hexo d 报 ERROR Deployer not found:git 错</a></h2>
             </div>
             <div class="post-description">
                 <p style="-webkit-line-clamp: 3">
-                    所需工具&nbsp;&nbsp;&nbsp; Git&nbsp;官网&nbsp;&nbsp;&nbsp; Hexo&nbsp;&nbsp;官网&nbsp;&nbsp;&nbsp; Node.js&nbsp;官网&nbsp;&nbsp;&nbsp; Github&nbsp;官网&nbsp;&nbsp;&nbsp; 域名(可选)
+                    问题hexo d 报错
+1ERROR Deployer not found: git
 
                 </p>
             </div>
+            
+                
+                    <img src="https://cdn.jsdelivr.net/gh/lete114/CDN/BoBoPic/20.jpg" class="cover" alt="封面">
+                
+            
+
             <div class="post-footer">
+                <!-- 发布时间 -->
                 <div class="post-meta">
                     <span class="post-date">
                         <i class="far fa-calendar-alt"></i>
                         <span>发表于</span>
-                        <span>2020-04-16</span>
+                        <span>2020-06-06</span>
                     </span>
                 </div>
+                <!-- 标签 -->
                 
-                <div class="post-tag">
-                    <span>
-                        <i class="fa fa-tag"></i>
-                         
-                        <a href="tags/Github/"><span>Github</span></a>
+                    <div class="post-tag">
+                        <span>
+                            <i class="fa fa-tag"></i>
+                             
+                            <span>
+                                <a href="tags/Git/">
+                                    <span>Git</span>
+                                </a>
+                                
+                            </span>
                             
-                                <i class="fas fa-angle-right"></i>
+                        </span>
+                    </div>
+                
+                <!-- 分类 -->
+                
+                    <div class="post-categorie">
+                        <span>
+                            <i class="fas fa-folder-open"></i>
+                             
+                            <span>
+                                <a href="categories/Git/">
+                                    <span>Git</span>
+                                </a>
+                                
+                            </span>
                             
-                         
-                        <a href="tags/Gitee/"><span>Gitee</span></a>
-                            
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/Hexo/"><span>Hexo</span></a>
-                            
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/博客/"><span>博客</span></a>
-                            
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/Blog/"><span>Blog</span></a>
-                            
-                        
-                    </span>
-                </div>
+                        </span>
+                    </div>
+                
             </div>
         </div>
 
@@ -177,50 +240,58 @@
 	
         <div class="post-item">
             <div class="post-title">
-                <h2><a href="/article/20581.html">Nodejs安装、环境配置</a></h2>
+                <h2><a href="/article/dac3150c.html">实用软件</a></h2>
             </div>
             <div class="post-description">
                 <p style="-webkit-line-clamp: 3">
-                    一、下载Nodejs&nbsp;官网
-根据自己电脑系统及位数选择，我这里选择windows64位.msi格式安装包
-
-
-
-
-这里说明一下.msi和.zip格式区别：
-
-
-.msi是Windows installer开发出来的程序安装文件，它可以让
+                    前言仅仅是为了记录自己使用过的一些实用软件，怕自己哪天找不回来了
+🍀 免费且没有官网的我会提供下载地址(可联系删除。邮箱：&#108;&#x65;&#x74;&#101;&#x40;&#108;&#x65;&#116;&#x65;&#x31;&#49;&#x34;&#x2e;&#x74;&#111;&#112;)
+✅ 表示在用💗  表示收藏，不常用❎ 表示用过，现在不用
+软件
                 </p>
             </div>
+            
+                
+                    <img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Cover/Tools.png" class="cover" alt="封面">
+                
+            
+
             <div class="post-footer">
+                <!-- 发布时间 -->
                 <div class="post-meta">
                     <span class="post-date">
                         <i class="far fa-calendar-alt"></i>
                         <span>发表于</span>
-                        <span>2020-04-16</span>
+                        <span>2020-06-06</span>
                     </span>
                 </div>
+                <!-- 标签 -->
                 
-                <div class="post-tag">
-                    <span>
-                        <i class="fa fa-tag"></i>
-                         
-                        <a href="tags/教程/"><span>教程</span></a>
+                    <div class="post-tag">
+                        <span>
+                            <i class="fa fa-tag"></i>
+                             
+                            <span>
+                                <a href="tags/软件/">
+                                    <span>软件</span>
+                                </a>
+                                
+                                    <i class="fas fa-angle-right"></i>
+                                
+                            </span>
+                             
+                            <span>
+                                <a href="tags/推荐/">
+                                    <span>推荐</span>
+                                </a>
+                                
+                            </span>
                             
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/安装/"><span>安装</span></a>
-                            
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/Nodejs/"><span>Nodejs</span></a>
-                            
-                        
-                    </span>
-                </div>
+                        </span>
+                    </div>
+                
+                <!-- 分类 -->
+                
             </div>
         </div>
 
@@ -230,50 +301,172 @@
 	
         <div class="post-item">
             <div class="post-title">
-                <h2><a href="/article/35939.html">【教程】Git下载、安装</a></h2>
+                <h2><a href="/article/Butterfly-config-2.3.5.html">(废弃)Butterfly(蝴蝶)主题美化、优化2.3.5</a></h2>
             </div>
             <div class="post-description">
                 <p style="-webkit-line-clamp: 3">
-                    一、下载Git&nbsp;官网
-1.点击Windows
+                    Butterfly 2.3.5 优化
+  本片文章是根据 Buteeryfly 主题 2.3.5 版本修改。Butterfly 主题于 2020-6-16 更新至 3.0.0-RC-1 版本 (此版本为小更新)
 
 
 
-
-点击 64-bit Git for Windows Setup.下载 这里我电脑是64位,根据自己电脑是多少位选择
-
+     2.3.5 版本涉及到修改源码，如果你要升级主题的话，你请看上方其他版本的优化教程。
 
 
+本文所做的优化是我自己hexo init后，去Github上克隆Butterfly主题的稳定版，一步步在原主题基础上修改的保证了小白根据本片文章一步步操作，能够和我博客
                 </p>
             </div>
+            
+                
+                    <img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io@latest/img/Cover/Butterfly.png" class="cover" alt="封面">
+                
+            
+
             <div class="post-footer">
+                <!-- 发布时间 -->
                 <div class="post-meta">
                     <span class="post-date">
                         <i class="far fa-calendar-alt"></i>
                         <span>发表于</span>
-                        <span>2020-04-15</span>
+                        <span>2020-06-04</span>
                     </span>
                 </div>
+                <!-- 标签 -->
                 
-                <div class="post-tag">
-                    <span>
-                        <i class="fa fa-tag"></i>
-                         
-                        <a href="tags/教程/"><span>教程</span></a>
+                    <div class="post-tag">
+                        <span>
+                            <i class="fa fa-tag"></i>
+                             
+                            <span>
+                                <a href="tags/Butterfly/">
+                                    <span>Butterfly</span>
+                                </a>
+                                
+                                    <i class="fas fa-angle-right"></i>
+                                
+                            </span>
+                             
+                            <span>
+                                <a href="tags/优化/">
+                                    <span>优化</span>
+                                </a>
+                                
+                                    <i class="fas fa-angle-right"></i>
+                                
+                            </span>
+                             
+                            <span>
+                                <a href="tags/教程/">
+                                    <span>教程</span>
+                                </a>
+                                
+                            </span>
                             
-                                <i class="fas fa-angle-right"></i>
+                        </span>
+                    </div>
+                
+                <!-- 分类 -->
+                
+                    <div class="post-categorie">
+                        <span>
+                            <i class="fas fa-folder-open"></i>
+                             
+                            <span>
+                                <a href="categories/Butterfly/">
+                                    <span>Butterfly</span>
+                                </a>
+                                
+                            </span>
                             
-                         
-                        <a href="tags/安装/"><span>安装</span></a>
-                            
-                                <i class="fas fa-angle-right"></i>
-                            
-                         
-                        <a href="tags/Git/"><span>Git</span></a>
-                            
-                        
+                        </span>
+                    </div>
+                
+            </div>
+        </div>
+
+
+
+
+	
+        <div class="post-item">
+            <div class="post-title">
+                <h2><a href="/article/eef7397d.html">(废弃)Butterfly(蝴蝶)主题美化、优化3.0.0RC2</a></h2>
+            </div>
+            <div class="post-description">
+                <p style="-webkit-line-clamp: 3">
+                    前言
+    此贴已经废弃，但部分仍然可用，请跳转到 https://blog.lete114.top/article/Butterfly-config.html
+
+
+此篇文章会持续随着Butterfly主题版本更新，如果你喜欢那就请Ctrl+D吧😉注：如果以后我用了其他Hexo主题，此片文章即停止更新(我觉得不会有主题可以战胜Butterfly吧？因为太漂亮了)
+
+                </p>
+            </div>
+            
+                
+                    <img src="https://cdn.jsdelivr.net/gh/lete114/lete114.github.io/img/Cover/Butterfly.png" class="cover" alt="封面">
+                
+            
+
+            <div class="post-footer">
+                <!-- 发布时间 -->
+                <div class="post-meta">
+                    <span class="post-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>发表于</span>
+                        <span>2020-06-04</span>
                     </span>
                 </div>
+                <!-- 标签 -->
+                
+                    <div class="post-tag">
+                        <span>
+                            <i class="fa fa-tag"></i>
+                             
+                            <span>
+                                <a href="tags/Butterfly/">
+                                    <span>Butterfly</span>
+                                </a>
+                                
+                                    <i class="fas fa-angle-right"></i>
+                                
+                            </span>
+                             
+                            <span>
+                                <a href="tags/优化/">
+                                    <span>优化</span>
+                                </a>
+                                
+                                    <i class="fas fa-angle-right"></i>
+                                
+                            </span>
+                             
+                            <span>
+                                <a href="tags/教程/">
+                                    <span>教程</span>
+                                </a>
+                                
+                            </span>
+                            
+                        </span>
+                    </div>
+                
+                <!-- 分类 -->
+                
+                    <div class="post-categorie">
+                        <span>
+                            <i class="fas fa-folder-open"></i>
+                             
+                            <span>
+                                <a href="categories/Butterfly/">
+                                    <span>Butterfly</span>
+                                </a>
+                                
+                            </span>
+                            
+                        </span>
+                    </div>
+                
             </div>
         </div>
 
@@ -282,12 +475,15 @@
 
 
     <div class="pagination">
-        <a class="extend prev" rel="prev" href="/page/5/"><i class='fas fa-chevron-left fa-fw'></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+        <a class="extend prev" rel="prev" href="/page/5/"><i class='fas fa-chevron-left fa-fw'></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class='fas fa-chevron-right fa-fw'></i></a>
     </div>
 
 
-        </main>
+            </main>
+        </div>
     </div>
+    <img id="up" src="https://cdn.jsdelivr.net/gh/lete114/CDN/Use/up.gif" alt="回到顶部">
+    
     <footer class="footer" id="footer">
     <div class="copyright">
         
@@ -304,8 +500,9 @@
     </div>
     <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
 </footer>   
+    <script src="/js/main.js"></script>
+ 
     
-<script src="/js/main.js"></script>
    
 </body>
 </html>
