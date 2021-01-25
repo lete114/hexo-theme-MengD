@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     
 <meta charset="utf-8">
 <meta http-equiv="content-language" content="zh-CN">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<title>Hexo-MengD(萌典) 文档</title>
+<title>Hexo-Theme-MengD(萌典)</title>
 <link rel="icon" href="/img/favicon.ico">
-<meta name="keywords" content="">
-<meta name="description" content="人生只有一次，大胆的生活！！" />
-<meta property="site_name" content="Hexo-MengD(萌典) 文档" />
+<meta name="keywords" content="Hexo,Theme,MengD,MengD(萌典),主题,Lete114,Lete乐特">
+<meta name="description" content="一个崇尚简约优雅，以及极致的性能，把注意力集中到内容上" />
+<meta property="site_name" content="Hexo-Theme-MengD(萌典)" />
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mengd.lete114.top/index.html">
-<meta property="og:title" content="Hexo-MengD(萌典) 文档" />
-<meta property="og:site_name" content="Hexo-MengD(萌典) 文档" />
-<meta property="og:description" content="人生只有一次，大胆的生活！！" />
+<meta property="og:title" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:site_name" content="Hexo-Theme-MengD(萌典)" />
+<meta property="og:description" content="一个崇尚简约优雅，以及极致的性能，把注意力集中到内容上" />
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-MengD(萌典) 文档">
-<meta name="twitter:description" content="人生只有一次，大胆的生活！！">
+<meta name="twitter:title" content="Hexo-Theme-MengD(萌典)">
+<meta name="twitter:description" content="一个崇尚简约优雅，以及极致的性能，把注意力集中到内容上">
 <link rel="dns-prefetch" href="https://mengd.lete114.top/index.html">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
@@ -46,6 +46,16 @@
 </div>
 
     
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?8e216044fbe6b71b6fefc197c2508ed1";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
 
   
     <div style="display: flex;">
@@ -67,7 +77,7 @@
         
             <li><a href="/">首页</a></li>
         
-            <li><a href="/about">关于我</a></li>
+            <li><a href="/link">示例站点</a></li>
         
         </ul>
     </div>
@@ -75,7 +85,7 @@
     
         <li><a href="/">首页</a></li>
     
-        <li><a href="/about">关于我</a></li>
+        <li><a href="/link">示例站点</a></li>
     
     </ul>
 </nav>
@@ -88,7 +98,7 @@
             </div>
         </div>
         <div id="description" class="description">
-            <p>人生只有一次，大胆的生活！！</p>
+            <p>一个崇尚简约优雅，以及极致的性能，把注意力集中到内容上</p>
             <div class="social-icon">
                 
                     <a target="_blank" rel="noopener" href="https://github.com/lete114"><i class="fab fa-github"></i></a>
@@ -138,6 +148,7 @@
                 
             </div>
         </div>
+        
 
 
 
@@ -180,6 +191,7 @@
                 
             </div>
         </div>
+        
 
 
 
@@ -192,17 +204,19 @@
             <div class="post-description">
                 <p style="-webkit-line-clamp: 3">
                     
-                    Hexo-Theme-MengD(萌典)一个简洁美观的主题部分样式均模仿自Butterfly主题
+                    Hexo-Theme-MengD(萌典)一个简洁美观的主题更新内容同步dev分支，稳定版请看master分支
 
-2021-1-13优化head调整description在特殊情况下，只显示少部分内容的问题
+2021-1-25更新：i18n / 英语 / 简体中文 /更新：指定文章可关闭 打赏更新：自定义share调整：调整评论只能在文章页打开与关闭，更改为所有页面都有权开关评论修复：之前版本不能自定义打赏二维码的bug(疏忽)修复：之前版本版权url固定修复：部分单词拼错bug修复bug若干
 
-2021-1-8添加fancybox插件添加友情链接页面调整配置
+2021-1-22修复footer不识别html标签添加：ICP备案添加：CDN加速
 
-2021-1-7修复up酱在手机端文章页面显示错位的问题添加部分动画效果修复分类页不显示括号的问题的‘()’
+2021-1-19调整配置调整css样式添加: 当文章没有写内容标题时toc不显示修复: 当关闭搜索功能时导航栏显示位置错误的bug修复: 当页面小于900px大于800px时文章样式不连贯的bug更新资源压缩，只内置css压缩，html和js压缩需安装插件：npm install hexo-minify –save
 
-2021-1-5添加twikoo评论系统修复页面刷新后toc进度条清0的问题添加本地搜索(search插件)主题css、js资源url可自定义自定义引入外部js、css、等资源添加首页显示文章数修复当手机端打开导航栏菜单是屏幕大小有变化后，无法上下滚动浏览内容添加404页面调整部分字体在手机端显示过大的bug
 
-2021-1-4添加valine评论系统添加waline评论系统调整手机端页面样式添加手机端toc目录添加开/关首页是否显示cover图片添加文章页是否显示up酱添加主题配色配置文件添加CDN选项添加右侧选项、回到顶部、直达评论、手机端展开toc按钮调整up酱显示逻辑页面统计采用valine、waline自带
+
+2021-1-15添加Gitee(码云)申请友情链接添加仓库pr的方式申请友情链接(推荐)调整手机端样式显示bug
+
+2021-1-14修复在特殊情况下toc显示超过100%的bu
                 </p>
             </div>
             
@@ -224,6 +238,7 @@
                 
             </div>
         </div>
+        
 
 
 
@@ -249,11 +264,13 @@
         <span>主题 </span>
         <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
     </div>
+    
+    
     <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
 </footer>   
     <script src="/js/main.js"></script>
  
     
-   
+
 </body>
 </html>
