@@ -181,7 +181,7 @@ code {
     
     /*通过仓库pr修改link.yml方式*/
     $.get({
-        url: "https://links.lete114.vercel.app/MengD/link.yml",
+        url: "https://cdn.jsdelivr.net/gh/lete114/CDN@latest/link.yml",
         async:false,
         success: function(data){
             $.getScript("https://cdn.jsdelivr.net/npm/js-yaml@latest/dist/js-yaml.min.js",function(){
@@ -250,7 +250,9 @@ code {
             </main>
         </div>
         
+        
             <div id="toc" style="display: none;"></div>
+        
         
         
     </div>
@@ -291,7 +293,8 @@ code {
     
     <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
 </footer>   
-    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="/js/main.js"></script>
  
     
 
@@ -301,7 +304,11 @@ code {
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script>
         var pjax = new Pjax({
-            selectors: ["head title", "main.content","#toc"],
+            selectors: [
+                "head title",
+                "main.content",
+                "#toc"
+            ],
             cache: true,
   			cacheBust: false
         });

@@ -160,7 +160,8 @@
             <div class="post-description">
                 <p style="-webkit-line-clamp: 3">
                     
-                    打开themes\MengD\_config.yml
+                    此篇文章刚需较慢
+打开themes\MengD\_config.yml
 菜单栏12345678# 导航栏菜单menu:  首页: /  标签: /tags  分类: /categories  归档: /archives  友情链接: /link  关于我: /about
 如何添加新页面举例：tags页和link页
 添加tags标签页在命令行执行hexo new page tags随后打开source\tags\index.md添加type: tags
@@ -168,7 +169,7 @@
 添加link友情链接页执行hexo new page link打开source\link\index.md添加type: link
 12345---title: 友情链接date: 2021-01-08 11:27:22type: links---
 打开source\_data\link.yml(如果没有就自己建)写法如下
-12345678910111213141516171819202122232425262728293031323334353
+12345678910111213141516171819202122232425262728293031
                 </p>
             </div>
             
@@ -204,14 +205,13 @@
                     
                     Hexo-Theme-MengD(萌典)一个简洁美观的主题更新内容同步dev分支，稳定版请看master分支
 
+2021-1-27更新：更新代码块复制功能更新: toc可以 开/关纠正: 纠正en的内容修复：手机端toc显示超出bug修复：修复table框超出的bug修复: 修复部分代码块不显示边框的bug修复：search搜索出来的文章url缺少或多出/，导致url错乱的bug修复：修复开启pjax时search搜索出来的文章url点击后不触发pjax的bug
+
 2021-1-26更新：适配pjax更新：更新部分css样式调整：调整toc; 从原来得js动态追加更换为hexo渲染调整：调整css样式a调整：调整pr申请友链yaml.js修复：修复非文章页没有代码高亮bug纠错：纠错waline的serverURL移除：移除部分js
 
 
-2021-1-25更新：i18n / 英语 / 简体中文 /更新：指定文章可关闭 打赏更新：自定义share调整：调整评论只能在文章页打开与关闭，更改为所有页面都有权开关评论修复：之前版本不能自定义打赏二维码的bug(疏忽)修复：之前版本版权url固定修复：部分单词拼错bug修复bug若干
 
-2021-1-22修复footer不识别html标签添加：ICP备案添加：CDN加速
-
-2021-1-19调整配置调整css样式添加: 当文章没有写内容标题时toc不显示修复: 当关闭搜索功能时导航栏显示位置错误的bug修复: 当页面小于900px大于800px时文章样式不连贯的bug更新资源压缩，只内置css压缩
+2021-1-25更新：i18n / 英语 / 简体中文 /更新：指定文章可关闭 打赏更新：自定义share调整：调整评论只能在文章页打开与关闭，更改为所有页面都有权开关评论修复：之前版本不能自定义打赏二维码的bug(疏忽)修复：之前版本版权url固
                 </p>
             </div>
             
@@ -242,7 +242,9 @@
             </main>
         </div>
         
+        
             <div id="toc" style="display: none;"></div>
+        
         
         
     </div>
@@ -283,7 +285,8 @@
     
     <div class="custom-text">我相信我可以，但我一直在路上，所以我有无限的可能！！</div>
 </footer>   
-    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script src="/js/main.js"></script>
  
     
 
@@ -293,7 +296,11 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script>
         var pjax = new Pjax({
-            selectors: ["head title", "main.content","#toc"],
+            selectors: [
+                "head title",
+                "main.content",
+                "#toc"
+            ],
             cache: true,
   			cacheBust: false
         });
